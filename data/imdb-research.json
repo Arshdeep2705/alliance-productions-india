@@ -138,8 +138,8 @@
         "genre": "Feature film (TBA)"
       },
       {
-        "slug": "tom-dick-and-mary",
-        "title": "Tom Dick & Mary",
+        "slug": "tom-dick-and-harry-3",
+        "title": "Tom, Dick and Harry 3",
         "role": "Director / Producer (in development)",
         "status": "In development",
         "poster": null,
@@ -195,7 +195,7 @@
       {"title": "Tu He Main", "year": 2026, "role": "Actress", "format": "Music Video"},
       {"title": "O Jaane Jaan", "year": 2024, "role": "Actress (Lover)", "format": "Music Video"},
       {"title": "Gumshuda", "year": 2024, "role": "Actress", "format": "Music Video"},
-      {"title": "Tom Dick & Mary", "role": "Producer", "status": "In development"},
+      {"title": "Tom, Dick and Harry 3", "role": "Producer", "status": "In development"},
       {"title": "Misfired - Bali 9", "role": "Producer", "status": "In development"}
     ]
   }

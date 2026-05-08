@@ -35,7 +35,7 @@
     { title: 'Fareb', meta: 'Film · Director', href: 'films/fareb/', img: 'assets/films/fareb-w800.jpg' },
     { title: 'Khamoshh… Khauff Ki Raat', meta: 'Film · Director, Producer', href: 'films/khamoshh-khauff-ki-raat/', img: 'assets/films/khamoshh-w800.jpg' },
     { title: 'Oops!', meta: 'Film · Director, Producer', href: 'films/oops/', img: 'assets/films/oops-w800.jpg' },
-    { title: 'Tom Dick & Mary', meta: 'Upcoming · In development', href: 'upcoming/', img: 'assets/films/tom-dick-and-harry-2-w800.jpg' },
+    { title: 'Tom, Dick and Harry 3', meta: 'Upcoming · In development', href: 'upcoming/', img: 'assets/films/tom-dick-and-harry-2-w800.jpg' },
     { title: 'Misfired — Bali 9', meta: 'Upcoming · In development', href: 'upcoming/', img: 'assets/films/fareb-w800.jpg' },
     { title: 'Australia International Feature', meta: 'Upcoming · Pre-production', href: 'upcoming/', img: 'assets/films/do-lafzon-ki-kahani-w800.jpg' },
     { title: 'Deepak Tijori', meta: 'Managing Director', href: 'people/deepak-tijori/', img: 'assets/people/deepak-tijori-w800.jpg' },
