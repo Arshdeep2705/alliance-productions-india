@@ -652,6 +652,137 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .film-meta-row dt { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,.56); margin-bottom: 6px; }
 .film-meta-row dd { margin: 0; font-size: 15px; font-weight: 500; color: var(--white); }
 
+/* ─── Press grid ──────────────────────────────────────── */
+
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 960px) { .press-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .press-grid { grid-template-columns: 1fr; } }
+
+.press-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  min-height: 200px;
+}
+.press-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ink);
+  box-shadow: var(--shadow-md);
+}
+.press-card__source {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--deep-emerald);
+  margin-bottom: 14px;
+}
+.press-card__title {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  letter-spacing: -0.005em;
+}
+.press-card__excerpt {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 18px;
+}
+.press-card__cta {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+/* ─── Awards list ─────────────────────────────────────── */
+
+.awards-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.award-row {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.award-row__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+.award-row__name {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.award-row__year {
+  font-size: 13px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+.award-row__cat {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+.award-row__film {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: normal;
+}
+.award-row__film em {
+  font-style: normal;
+  color: var(--deep-emerald);
+  font-weight: 600;
+}
+
+/* ─── Media gallery ───────────────────────────────────── */
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 760px) { .media-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px) { .media-grid { grid-template-columns: 1fr; } }
+.media-card { margin: 0; }
+.media-card img {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  display: block;
+}
+.media-card figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-top: 10px;
+  text-align: center;
+}
+
 /* ─── External resources block (IMDb link on film pages) ─ */
 
 .external-block {
