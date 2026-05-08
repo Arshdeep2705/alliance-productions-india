@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alliance Productions India</title>
+    <meta
+      name="description"
+      content="Alliance Productions India creates Bollywood and Hollywood feature films and short films for global audiences."
+    />
+    <!-- Favicon -->
+    <link rel="icon" href="api-logo.svg" type="image/svg+xml" />
+    <!-- Open Graph / link preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Alliance Productions India" />
+    <meta property="og:description" content="Indian identity. International ambition. Bollywood · Hollywood · International Cinema." />
+    <meta property="og:image" content="api-logo.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Alliance Productions India home">
+        <img src="api-logo.svg" alt="Alliance Productions India" class="api-logo" />
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#films">Films</a>
+        <a href="#people">People</a>
+        <a href="#press">Awards &amp; Press</a>
+        <a href="#submit">Submit</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="header-cta" href="#partner">Partner With Us</a>
+    </header>
+
+    <main id="home">
+      <section class="hero section-panel">
+        <div class="hero-copy">
+          <p class="superline">Bollywood &middot; Hollywood &middot; International Cinema</p>
+          <h1>Stories built for the grand screen and the world stage.</h1>
+          <p>
+            Alliance Productions India develops, produces, and partners on feature films and short films
+            across Indian and international cinema.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#partner">Partner With Us</a>
+            <a class="secondary-action" href="#films">Explore the Slate</a>
+          </div>
+        </div>
+        <div class="hero-stage" aria-label="Cinematic studio visual">
+          <div class="hero-logo-mark">
+            <img src="api-logo.svg" alt="" aria-hidden="true" />
+          </div>
+          <div class="spotlight"></div>
+          <div class="poster poster-one">
+            <span>Released</span>
+            <strong>Feature Film</strong>
+          </div>
+          <div class="poster poster-two">
+            <span>In Production</span>
+            <strong>Global Drama</strong>
+          </div>
+          <div class="poster poster-three">
+            <span>Upcoming</span>
+            <strong>Short Film</strong>
+          </div>
+          <div class="logo-wave" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="marquee" aria-label="Studio capabilities">
+        <span>Feature Films</span>
+        <span>Short Films</span>
+        <span>International Co-Productions</span>
+        <span>Talent-Led Cinema</span>
+        <span>Award-Winning Shorts</span>
+        <span>Festival Selections</span>
+        <span>Feature Films</span>
+        <span>Short Films</span>
+        <span>International Co-Productions</span>
+        <span>Talent-Led Cinema</span>
+        <span>Award-Winning Shorts</span>
+        <span>Festival Selections</span>
+      </section>
+
+      <section class="intro section-panel" id="about">
+        <div>
+          <p class="superline">The Studio</p>
+          <h2>Indian identity. International ambition.</h2>
+        </div>
+        <p>
+          Alliance Productions India brings cinematic stories from development to screen, connecting
+          creative talent, production partners, investors, distributors, and audiences across markets.
+          The site is designed to grow from this launch version into a complete studio platform.
+        </p>
+      </section>
+
+      <section class="section-block" id="films">
+        <div class="section-heading">
+          <p class="superline">Films</p>
+          <h2>Released, in production, and upcoming.</h2>
+          <a href="#cms">Content Admin Preview</a>
+        </div>
+        <div class="film-tabs" role="tablist" aria-label="Film status filters">
+          <button class="tab active" data-filter="all">All</button>
+          <button class="tab" data-filter="Released">Released</button>
+          <button class="tab" data-filter="In Production">In Production</button>
+          <button class="tab" data-filter="Upcoming">Upcoming</button>
+        </div>
+        <div class="film-grid" id="filmGrid"></div>
+      </section>
+
+      <section class="section-block people-section" id="people">
+        <div class="section-heading">
+          <p class="superline">People</p>
+          <h2>The creative and production force.</h2>
+          <span>Click a person to view profile details.</span>
+        </div>
+        <div class="people-grid" id="peopleGrid"></div>
+      </section>
+
+      <section class="detail-drawer" id="detailDrawer" aria-live="polite">
+        <div>
+          <p class="superline" id="detailKicker">Selected Profile</p>
+          <h2 id="detailTitle">Select a film or person</h2>
+          <p id="detailBody">
+            Film and people pages will open with synopsis, biography, credits, awards, related works,
+            and media assets.
+          </p>
+        </div>
+        <dl id="detailFacts"></dl>
+      </section>
+
+      <section class="section-block split-section" id="press">
+        <div>
+          <p class="superline">Awards &amp; Press</p>
+          <h2>Proof that travels.</h2>
+          <p>
+            Built for awards, festival selections, trade coverage, interviews, release announcements,
+            and downloadable press material.
+          </p>
+        </div>
+        <div class="press-list">
+          <article>
+            <span>Festival Selection</span>
+            <strong>International premiere announcement</strong>
+          </article>
+          <article>
+            <span>Trade Press</span>
+            <strong>Studio slate and production update</strong>
+          </article>
+          <article>
+            <span>Awards</span>
+            <strong>Recognition across features and shorts</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block split-section" id="submit">
+        <div>
+          <p class="superline">Submit a Project</p>
+          <h2>A selective path for strong material.</h2>
+          <p>
+            Writers, directors, producers, and representatives can submit a project package for review.
+            The production version will collect PDF pitch decks, synopsis, team details, contact details,
+            and rights status.
+          </p>
+        </div>
+        <form class="pitch-form">
+          <label>
+            Project title
+            <input type="text" placeholder="Working title" />
+          </label>
+          <label>
+            Project type
+            <select>
+              <option>Feature film</option>
+              <option>Short film</option>
+              <option>Series or other</option>
+            </select>
+          </label>
+          <label>
+            Contact email
+            <input type="email" placeholder="name@example.com" />
+          </label>
+          <button type="button">Prepare Submission</button>
+        </form>
+      </section>
+
+      <section class="partner section-panel" id="partner">
+        <p class="superline">Partner With Us</p>
+        <h2>For producers, financiers, distributors, streamers, and creative partners.</h2>
+        <p>
+          Alliance is building a studio presence that can support deal conversations, film packages,
+          co-productions, talent collaboration, and future private investor materials.
+        </p>
+        <a class="primary-action" href="mailto:info@allianceproductionsindia.com">Start a Conversation</a>
+      </section>
+
+      <section class="section-block cms-section" id="cms">
+        <div class="section-heading">
+          <p class="superline">Admin Foundation</p>
+          <h2>What the future CMS will let the team edit.</h2>
+        </div>
+        <div class="cms-grid">
+          <article><strong>Films</strong><span>Titles, posters, status, synopsis, cast, crew, awards, press.</span></article>
+          <article><strong>People</strong><span>Profiles, portraits, bios, credits, related films.</span></article>
+          <article><strong>Press</strong><span>Articles, festival news, award wins, announcements.</span></article>
+          <article><strong>Submissions</strong><span>Project pitches, contact details, attachments, review status.</span></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="footer-brand">
+        <img src="api-logo.svg" alt="Alliance Productions India" class="api-footer-logo" />
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <a href="mailto:info@allianceproductionsindia.com">info@allianceproductionsindia.com</a>
+      </div>
+      <div>
+        <strong>Domain</strong>
+        <a href="https://allianceproductionsindia.com" target="_blank" rel="noopener">allianceproductionsindia.com</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

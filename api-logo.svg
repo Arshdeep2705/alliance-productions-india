@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 280" role="img" aria-label="Alliance Productions India">
+  <title>Alliance Productions India</title>
+
+  <!-- ═══════════════════════════════════════════
+       "API" — ultra-bold emerald green letterforms
+       ═══════════════════════════════════════════ -->
+  <text
+    x="4" y="236"
+    font-family="'Arial Black','Franklin Gothic Heavy','Impact','Helvetica Neue',Arial,sans-serif"
+    font-weight="900"
+    font-size="212"
+    fill="#75bd45"
+    letter-spacing="-10"
+  >API</text>
+
+  <!-- ═══════════════════════════════════════════
+       Company name — spaced serif text, right column
+       White text so it reads on the dark website bg
+       ═══════════════════════════════════════════ -->
+  <text
+    x="348" y="86"
+    font-family="Georgia,'Times New Roman',Times,serif"
+    font-size="23"
+    fill="#f8f4ec"
+    letter-spacing="13"
+    font-weight="400"
+  >ALLIANCE</text>
+
+  <text
+    x="330" y="128"
+    font-family="Georgia,'Times New Roman',Times,serif"
+    font-size="23"
+    fill="#f8f4ec"
+    letter-spacing="7"
+    font-weight="400"
+  >PRODUCTIONS</text>
+
+  <!-- ═══════════════════════════════════════════
+       Indian-flag wave  (green → white → saffron)
+       Fans out from the left (API area) to the right.
+       Layers painted bottom-to-top so colours blend naturally.
+       ═══════════════════════════════════════════ -->
+
+  <!-- Layer 0 — deepest shadow green, full bottom fill -->
+  <path
+    d="M 0,238
+       C 80,222 180,242 280,226
+       C 370,212 450,232 560,214
+       C 600,208 630,216 660,204
+       L 660,280 L 0,280 Z"
+    fill="#0e7a3a" opacity="0.72"
+  />
+
+  <!-- Layer 1 — medium green band -->
+  <path
+    d="M 0,222
+       C 70,205 165,228 265,212
+       C 355,197 435,220 548,200
+       C 598,191 635,208 660,192
+       L 660,252
+       C 635,268 598,251 548,260
+       C 435,278 355,255 265,271
+       C 165,287 70,264 0,281 Z"
+    fill="#75bd45" opacity="0.86"
+  />
+
+  <!-- Layer 2 — warm white / cream band -->
+  <path
+    d="M 0,205
+       C 75,188 175,211 278,194
+       C 368,179 448,203 560,183
+       C 604,175 638,192 660,177
+       L 660,228
+       C 638,243 604,226 560,234
+       C 448,254 368,230 278,247
+       C 175,264 75,241 0,258 Z"
+    fill="#f0ece2" opacity="0.80"
+  />
+
+  <!-- Layer 3 — saffron / orange (dominant centre-right) -->
+  <path
+    d="M 18,188
+       C 95,170 200,192 308,174
+       C 400,158 478,180 572,162
+       C 614,153 642,168 660,155
+       L 660,200
+       C 642,213 614,198 572,207
+       C 478,225 400,203 308,221
+       C 200,239 95,217 18,235 Z"
+    fill="#f29b19" opacity="0.94"
+  />
+
+  <!-- Layer 4 — bright green top-edge accent -->
+  <path
+    d="M 0,172
+       C 80,155 185,176 292,158
+       C 382,142 460,163 568,145
+       C 610,137 642,153 660,140
+       L 660,160
+       C 642,173 610,157 568,165
+       C 460,183 382,162 292,178
+       C 185,196 80,175 0,192 Z"
+    fill="#75bd45" opacity="0.66"
+  />
+
+  <!-- ═══════════════════════════════════════════
+       "INDIA" — bold, on the saffron band
+       Dark text for contrast against saffron
+       ═══════════════════════════════════════════ -->
+  <text
+    x="382" y="208"
+    font-family="Georgia,'Times New Roman',Times,serif"
+    font-size="25"
+    font-weight="700"
+    fill="#111111"
+    letter-spacing="13"
+  >INDIA</text>
+</svg>
