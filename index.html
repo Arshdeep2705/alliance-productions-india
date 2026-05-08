@@ -1,230 +1,352 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alliance Productions India</title>
-    <meta
-      name="description"
-      content="Alliance Productions India creates Bollywood and Hollywood feature films and short films for global audiences."
-    />
-    <!-- Favicon -->
-    <link rel="icon" href="api-logo.svg" type="image/svg+xml" />
-    <!-- Open Graph / link preview -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Alliance Productions India" />
-    <meta property="og:description" content="Indian identity. International ambition. Bollywood · Hollywood · International Cinema." />
-    <meta property="og:image" content="api-logo.svg" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="grain" aria-hidden="true"></div>
-    <header class="site-header">
-      <a class="brand" href="#home" aria-label="Alliance Productions India home">
-        <img src="api-logo.svg" alt="Alliance Productions India" class="api-logo" />
-      </a>
-      <nav class="main-nav" aria-label="Primary navigation">
-        <a href="#films">Films</a>
-        <a href="#people">People</a>
-        <a href="#press">Awards &amp; Press</a>
-        <a href="#submit">Submit</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="header-cta" href="#partner">Partner With Us</a>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alliance Productions India LLP — Cinema for the world stage</title>
+  <meta name="description" content="Alliance Productions India LLP develops and produces feature films, short films, and international co-productions. Helmed by Deepak Tijori." />
+  <link rel="icon" href="assets/logo/api-emblem-w200.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Alliance Productions India LLP" />
+  <meta property="og:description" content="Indian identity. International ambition. Bollywood, Hollywood, and global cinema." />
+  <meta property="og:image" content="assets/logo/api-llp-logo-w1200.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-    <main id="home">
-      <section class="hero section-panel">
-        <div class="hero-copy">
-          <p class="superline">Bollywood &middot; Hollywood &middot; International Cinema</p>
-          <h1>Stories built for the grand screen and the world stage.</h1>
-          <p>
-            Alliance Productions India develops, produces, and partners on feature films and short films
-            across Indian and international cinema.
-          </p>
-          <div class="hero-actions">
-            <a class="primary-action" href="#partner">Partner With Us</a>
-            <a class="secondary-action" href="#films">Explore the Slate</a>
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header__inner">
+        <a class="brand" href="./" aria-label="Alliance Productions India LLP">
+          <img src="assets/logo/api-llp-logo-w600.png" alt="Alliance Productions India LLP" />
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+          <a href="films/" data-key="films">Films</a>
+          <a href="upcoming/" data-key="upcoming">Upcoming</a>
+          <a href="people/" data-key="people">People</a>
+          <a href="studio/" data-key="studio">Studio</a>
+          <a href="news/" data-key="news">News</a>
+          <a href="submit/" data-key="submit">Submit</a>
+        </nav>
+        <div class="header-utils">
+          <button class="icon-btn" data-search aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <a class="contact-btn" href="contact/">Contact</a>
+          <div class="social-row" aria-label="Social media">
+            <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+            </a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.34 18H5.67V9.5h2.67V18zM7 8.34a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zM18.34 18h-2.67v-4.13c0-.99-.02-2.26-1.38-2.26-1.38 0-1.6 1.08-1.6 2.19V18h-2.66V9.5h2.55v1.16h.04c.36-.68 1.23-1.38 2.53-1.38 2.7 0 3.2 1.78 3.2 4.1V18z"/></svg>
+            </a>
+            <a href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 4 12 4 12 4s-7.5 0-9.4.4A3 3 0 0 0 .5 6.5C.1 8.4.1 12 .1 12s0 3.6.4 5.5a3 3 0 0 0 2.1 2.1C4.5 20 12 20 12 20s7.5 0 9.4-.4a3 3 0 0 0 2.1-2.1c.4-1.9.4-5.5.4-5.5s0-3.6-.4-5.5zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+            </a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+            </a>
           </div>
+          <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
         </div>
-        <div class="hero-stage" aria-label="Cinematic studio visual">
-          <div class="hero-logo-mark">
-            <img src="api-logo.svg" alt="" aria-hidden="true" />
-          </div>
-          <div class="spotlight"></div>
-          <div class="poster poster-one">
-            <span>Released</span>
-            <strong>Feature Film</strong>
-          </div>
-          <div class="poster poster-two">
-            <span>In Production</span>
-            <strong>Global Drama</strong>
-          </div>
-          <div class="poster poster-three">
-            <span>Upcoming</span>
-            <strong>Short Film</strong>
-          </div>
-          <div class="logo-wave" aria-hidden="true"></div>
-        </div>
-      </section>
-
-      <section class="marquee" aria-label="Studio capabilities">
-        <span>Feature Films</span>
-        <span>Short Films</span>
-        <span>International Co-Productions</span>
-        <span>Talent-Led Cinema</span>
-        <span>Award-Winning Shorts</span>
-        <span>Festival Selections</span>
-        <span>Feature Films</span>
-        <span>Short Films</span>
-        <span>International Co-Productions</span>
-        <span>Talent-Led Cinema</span>
-        <span>Award-Winning Shorts</span>
-        <span>Festival Selections</span>
-      </section>
-
-      <section class="intro section-panel" id="about">
-        <div>
-          <p class="superline">The Studio</p>
-          <h2>Indian identity. International ambition.</h2>
-        </div>
-        <p>
-          Alliance Productions India brings cinematic stories from development to screen, connecting
-          creative talent, production partners, investors, distributors, and audiences across markets.
-          The site is designed to grow from this launch version into a complete studio platform.
-        </p>
-      </section>
-
-      <section class="section-block" id="films">
-        <div class="section-heading">
-          <p class="superline">Films</p>
-          <h2>Released, in production, and upcoming.</h2>
-          <a href="#cms">Content Admin Preview</a>
-        </div>
-        <div class="film-tabs" role="tablist" aria-label="Film status filters">
-          <button class="tab active" data-filter="all">All</button>
-          <button class="tab" data-filter="Released">Released</button>
-          <button class="tab" data-filter="In Production">In Production</button>
-          <button class="tab" data-filter="Upcoming">Upcoming</button>
-        </div>
-        <div class="film-grid" id="filmGrid"></div>
-      </section>
-
-      <section class="section-block people-section" id="people">
-        <div class="section-heading">
-          <p class="superline">People</p>
-          <h2>The creative and production force.</h2>
-          <span>Click a person to view profile details.</span>
-        </div>
-        <div class="people-grid" id="peopleGrid"></div>
-      </section>
-
-      <section class="detail-drawer" id="detailDrawer" aria-live="polite">
-        <div>
-          <p class="superline" id="detailKicker">Selected Profile</p>
-          <h2 id="detailTitle">Select a film or person</h2>
-          <p id="detailBody">
-            Film and people pages will open with synopsis, biography, credits, awards, related works,
-            and media assets.
-          </p>
-        </div>
-        <dl id="detailFacts"></dl>
-      </section>
-
-      <section class="section-block split-section" id="press">
-        <div>
-          <p class="superline">Awards &amp; Press</p>
-          <h2>Proof that travels.</h2>
-          <p>
-            Built for awards, festival selections, trade coverage, interviews, release announcements,
-            and downloadable press material.
-          </p>
-        </div>
-        <div class="press-list">
-          <article>
-            <span>Festival Selection</span>
-            <strong>International premiere announcement</strong>
-          </article>
-          <article>
-            <span>Trade Press</span>
-            <strong>Studio slate and production update</strong>
-          </article>
-          <article>
-            <span>Awards</span>
-            <strong>Recognition across features and shorts</strong>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-block split-section" id="submit">
-        <div>
-          <p class="superline">Submit a Project</p>
-          <h2>A selective path for strong material.</h2>
-          <p>
-            Writers, directors, producers, and representatives can submit a project package for review.
-            The production version will collect PDF pitch decks, synopsis, team details, contact details,
-            and rights status.
-          </p>
-        </div>
-        <form class="pitch-form">
-          <label>
-            Project title
-            <input type="text" placeholder="Working title" />
-          </label>
-          <label>
-            Project type
-            <select>
-              <option>Feature film</option>
-              <option>Short film</option>
-              <option>Series or other</option>
-            </select>
-          </label>
-          <label>
-            Contact email
-            <input type="email" placeholder="name@example.com" />
-          </label>
-          <button type="button">Prepare Submission</button>
-        </form>
-      </section>
-
-      <section class="partner section-panel" id="partner">
-        <p class="superline">Partner With Us</p>
-        <h2>For producers, financiers, distributors, streamers, and creative partners.</h2>
-        <p>
-          Alliance is building a studio presence that can support deal conversations, film packages,
-          co-productions, talent collaboration, and future private investor materials.
-        </p>
-        <a class="primary-action" href="mailto:info@allianceproductionsindia.com">Start a Conversation</a>
-      </section>
-
-      <section class="section-block cms-section" id="cms">
-        <div class="section-heading">
-          <p class="superline">Admin Foundation</p>
-          <h2>What the future CMS will let the team edit.</h2>
-        </div>
-        <div class="cms-grid">
-          <article><strong>Films</strong><span>Titles, posters, status, synopsis, cast, crew, awards, press.</span></article>
-          <article><strong>People</strong><span>Profiles, portraits, bios, credits, related films.</span></article>
-          <article><strong>Press</strong><span>Articles, festival news, award wins, announcements.</span></article>
-          <article><strong>Submissions</strong><span>Project pitches, contact details, attachments, review status.</span></article>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer" id="contact">
-      <div class="footer-brand">
-        <img src="api-logo.svg" alt="Alliance Productions India" class="api-footer-logo" />
       </div>
-      <div>
-        <strong>Contact</strong>
-        <a href="mailto:info@allianceproductionsindia.com">info@allianceproductionsindia.com</a>
-      </div>
-      <div>
-        <strong>Domain</strong>
-        <a href="https://allianceproductionsindia.com" target="_blank" rel="noopener">allianceproductionsindia.com</a>
-      </div>
-    </footer>
+    </div>
+  </header>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- ═══════════════ HERO ROTATOR ═══════════════ -->
+  <section class="hero">
+    <div class="hero__slides">
+      <div class="hero__slide" style="background-image:url('assets/films/tipppsy-w800.jpg')"></div>
+      <div class="hero__slide" style="background-image:url('assets/films/do-lafzon-ki-kahani-w800.jpg')"></div>
+      <div class="hero__slide" style="background-image:url('assets/films/fox-w800.jpg')"></div>
+      <div class="hero__slide" style="background-image:url('assets/films/khamoshh-w800.jpg')"></div>
+    </div>
+    <div class="container hero__content">
+      <div class="hero__copy" data-slide="0">
+        <span class="hero__eyebrow">Now in cinemas</span>
+        <h1>Tipppsy</h1>
+        <p>A bachelorette weekend in Goa turns into a tightening thriller. Directed by Deepak Tijori — Alliance Productions' latest release.</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="films/tipppsy/">Discover the film</a>
+          <a class="btn btn--ghost" href="films/">All films</a>
+        </div>
+      </div>
+      <div class="hero__copy" data-slide="1" style="display:none">
+        <span class="hero__eyebrow">From the slate</span>
+        <h1>Do Lafzon Ki Kahani</h1>
+        <p>An ex-MMA fighter and a sculptor whose paths cross — and whose pasts bleed into the present. Directed and co-produced by Deepak Tijori.</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="films/do-lafzon-ki-kahani/">Discover the film</a>
+          <a class="btn btn--ghost" href="films/">All films</a>
+        </div>
+      </div>
+      <div class="hero__copy" data-slide="2" style="display:none">
+        <span class="hero__eyebrow">From the slate</span>
+        <h1>Fox</h1>
+        <p>A disgraced lawyer-turned-author is arrested for multiple homicides. A crime mystery with a singular voice.</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="films/fox/">Discover the film</a>
+          <a class="btn btn--ghost" href="films/">All films</a>
+        </div>
+      </div>
+      <div class="hero__copy" data-slide="3" style="display:none">
+        <span class="hero__eyebrow">From the slate</span>
+        <h1>Khamoshh… Khauff Ki Raat</h1>
+        <p>One rainy night. One stranded motel. One killer among them. A mystery-thriller in the Hitchcock tradition.</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="films/khamoshh-khauff-ki-raat/">Discover the film</a>
+          <a class="btn btn--ghost" href="films/">All films</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__nav">
+      <span class="hero__counter">01 / 04</span>
+      <div class="hero__dots" aria-label="Slide selector"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ INTRO ═══════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="split-2">
+        <div class="reveal">
+          <span class="eyebrow eyebrow--accent">The studio</span>
+          <h2>Indian identity.<br/>International ambition.</h2>
+        </div>
+        <div class="reveal">
+          <p class="lead">
+            Alliance Productions India LLP develops and produces feature films, short films and music projects
+            from Mumbai for audiences across the world. With over three decades of cinema behind us — and a
+            slate that now reaches into Australia and beyond — we're a studio built around emotionally charged
+            performances and bold, genre-defining storytelling.
+          </p>
+          <a class="btn btn--ink" href="studio/" style="margin-top:8px">About the studio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ STATS ═══════════════ -->
+  <section class="section--tight">
+    <div class="container">
+      <div class="stats-row reveal">
+        <div class="stat"><span class="stat__num">35+</span><span class="stat__label">Years in cinema</span></div>
+        <div class="stat"><span class="stat__num">10</span><span class="stat__label">Films directed &amp; produced</span></div>
+        <div class="stat"><span class="stat__num">9</span><span class="stat__label">Awards &amp; nominations</span></div>
+        <div class="stat"><span class="stat__num">3</span><span class="stat__label">Projects in development</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FEATURED FILMS ═══════════════ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Films</span>
+          <h2>From the slate</h2>
+        </div>
+        <a class="section-head__more" href="films/">See all films →</a>
+      </div>
+      <div class="films-grid reveal">
+
+        <a class="film-card" href="films/tipppsy/">
+          <div class="film-card__poster">
+            <span class="film-card__status">Now in cinemas</span>
+            <img src="assets/films/tipppsy-w800.jpg" alt="Tipppsy poster" loading="lazy" />
+          </div>
+          <h3>Tipppsy</h3>
+          <div class="film-card__meta">
+            <div class="film-card__meta-row"><strong>Director</strong> Deepak Tijori</div>
+            <div class="film-card__meta-row"><strong>Genre</strong> Adventure · Thriller</div>
+          </div>
+        </a>
+
+        <a class="film-card" href="films/do-lafzon-ki-kahani/">
+          <div class="film-card__poster">
+            <span class="film-card__status">Released</span>
+            <img src="assets/films/do-lafzon-ki-kahani-w800.jpg" alt="Do Lafzon Ki Kahani poster" loading="lazy" />
+          </div>
+          <h3>Do Lafzon Ki Kahani</h3>
+          <div class="film-card__meta">
+            <div class="film-card__meta-row"><strong>Director / Producer</strong> Deepak Tijori</div>
+            <div class="film-card__meta-row"><strong>Cast</strong> Randeep Hooda, Kajal Aggarwal</div>
+          </div>
+        </a>
+
+        <a class="film-card" href="films/fox/">
+          <div class="film-card__poster">
+            <span class="film-card__status">Released</span>
+            <img src="assets/films/fox-w800.jpg" alt="Fox poster" loading="lazy" />
+          </div>
+          <h3>Fox</h3>
+          <div class="film-card__meta">
+            <div class="film-card__meta-row"><strong>Director / Producer</strong> Deepak Tijori</div>
+            <div class="film-card__meta-row"><strong>Genre</strong> Crime · Drama · Mystery</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ UPCOMING TEASER ═══════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">In development</span>
+          <h2>What's coming next</h2>
+        </div>
+        <a class="section-head__more" href="upcoming/">See all upcoming →</a>
+      </div>
+
+      <div class="films-grid reveal">
+
+        <a class="film-card" href="upcoming/">
+          <div class="film-card__poster" style="background:linear-gradient(160deg,#0a3d20,#75bd45 55%,#0a3d20);">
+            <span class="film-card__status film-card__status--upcoming">Pre-production</span>
+          </div>
+          <h3>Australia International Feature</h3>
+          <div class="film-card__meta">
+            <div class="film-card__meta-row"><strong>Producer</strong> Alliance Productions India</div>
+            <div class="film-card__meta-row"><strong>Status</strong> 2025–26 production</div>
+          </div>
+        </a>
+
+        <a class="film-card" href="upcoming/">
+          <div class="film-card__poster" style="background:linear-gradient(160deg,#1a1a1a,#f29b19 60%,#1a1a1a);">
+            <span class="film-card__status film-card__status--upcoming">In development</span>
+          </div>
+          <h3>Tom Dick &amp; Mary</h3>
+          <div class="film-card__meta">
+            <div class="film-card__meta-row"><strong>Director / Producer</strong> Deepak Tijori</div>
+            <div class="film-card__meta-row"><strong>Genre</strong> Comedy</div>
+          </div>
+        </a>
+
+        <a class="film-card" href="upcoming/">
+          <div class="film-card__poster" style="background:linear-gradient(160deg,#0a0a0a,#3a1a55 55%,#0a0a0a);">
+            <span class="film-card__status film-card__status--upcoming">In development</span>
+          </div>
+          <h3>Misfired — Bali 9</h3>
+          <div class="film-card__meta">
+            <div class="film-card__meta-row"><strong>Producer</strong> Alliance Productions India</div>
+            <div class="film-card__meta-row"><strong>Genre</strong> Feature</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PEOPLE TEASER ═══════════════ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">People</span>
+          <h2>The team behind the slate</h2>
+        </div>
+        <a class="section-head__more" href="people/">See all people →</a>
+      </div>
+
+      <div class="people-grid reveal">
+        <a class="person-card" href="people/deepak-tijori/">
+          <div class="person-card__portrait"><img src="assets/people/deepak-tijori-w800.jpg" alt="Deepak Tijori portrait" loading="lazy"></div>
+          <h3>Deepak Tijori</h3>
+          <div class="person-card__role">Managing Director · Director · Producer</div>
+        </a>
+        <a class="person-card" href="people/snehal-kulshreshtha/">
+          <div class="person-card__portrait"><img src="assets/people/snehal-kulshreshtha-w800.jpg" alt="Snehal Kulshreshtha portrait" loading="lazy"></div>
+          <h3>Snehal Kulshreshtha</h3>
+          <div class="person-card__role">Director · PR &amp; Global Outreach</div>
+        </a>
+        <a class="person-card" href="people/anita-sharma/">
+          <div class="person-card__portrait"><img src="assets/people/anita-sharma-w800.jpg" alt="Anita Sharma portrait" loading="lazy"></div>
+          <h3>Anita Sharma</h3>
+          <div class="person-card__role">Co-Producer · Music Director</div>
+        </a>
+        <a class="person-card" href="people/mandeep-kaur-tijori/">
+          <div class="person-card__portrait"><img src="assets/people/mandeep-kaur-tijori-w800.jpg" alt="Mandeep Kaur Tijori portrait" loading="lazy"></div>
+          <h3>Mandeep Kaur Tijori</h3>
+          <div class="person-card__role">Director · Producer · Actor</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PARTNER CTA ═══════════════ -->
+  <section class="section section--ink">
+    <div class="container center">
+      <span class="eyebrow" style="color:rgba(255,255,255,.6)">Partner with us</span>
+      <h2 style="max-width:900px;margin-left:auto;margin-right:auto">Looking for a co-production, distribution, or financing partner?</h2>
+      <p class="lead" style="margin:20px auto 32px;color:rgba(255,255,255,.78)">
+        Alliance Productions India is actively packaging international features and Indian-language projects.
+        We work with producers, financiers, distributors, streamers and creative partners across markets.
+      </p>
+      <a class="btn btn--solid" href="contact/">Start a conversation</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo/api-llp-logo-w600.png" alt="Alliance Productions India LLP" />
+          <p>Alliance Productions India LLP develops and produces feature films, short films and music projects with global reach.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="studio/">About</a></li>
+            <li><a href="people/">People</a></li>
+            <li><a href="news/">News</a></li>
+            <li><a href="submit/">Submit a project</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Work</h4>
+          <ul>
+            <li><a href="films/">Films</a></li>
+            <li><a href="upcoming/">Upcoming</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@allianceproductionsindia.com">info@allianceproductionsindia.com</a></li>
+            <li>Mumbai, India</li>
+            <li><a href="contact/">Contact page →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Alliance Productions India LLP — All rights reserved.</span>
+        <div class="social-row">
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.34 18H5.67V9.5h2.67V18zM7 8.34a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zM18.34 18h-2.67v-4.13c0-.99-.02-2.26-1.38-2.26-1.38 0-1.6 1.08-1.6 2.19V18h-2.66V9.5h2.55v1.16h.04c.36-.68 1.23-1.38 2.53-1.38 2.7 0 3.2 1.78 3.2 4.1V18z"/></svg></a>
+          <a href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 4 12 4 12 4s-7.5 0-9.4.4A3 3 0 0 0 .5 6.5C.1 8.4.1 12 .1 12s0 3.6.4 5.5a3 3 0 0 0 2.1 2.1C4.5 20 12 20 12 20s7.5 0 9.4-.4a3 3 0 0 0 2.1-2.1c.4-1.9.4-5.5.4-5.5s0-3.6-.4-5.5zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+          <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ SEARCH OVERLAY ═══════════════ -->
+  <div class="search-overlay" role="dialog" aria-label="Search">
+    <div class="search-overlay__inner">
+      <button class="search-overlay__close" aria-label="Close search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;margin:auto"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <input type="search" placeholder="Search films, people, projects…" autocomplete="off" />
+      <p class="search-overlay__hint">Press Esc to close · Try "Tipppsy", "Deepak", "Australia"</p>
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>

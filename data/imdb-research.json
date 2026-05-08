@@ -1,0 +1,202 @@
+{
+  "deepak_tijori": {
+    "imdb_url": "https://www.imdb.com/name/nm0863120/",
+    "directed_produced": [
+      {
+        "slug": "tipppsy",
+        "title": "Tipppsy",
+        "year": 2024,
+        "role": "Director",
+        "status": "Released",
+        "poster": "assets/films/tipppsy.jpg",
+        "poster_source": "https://m.media-amazon.com/images/M/MV5BZWEyZWNhZDYtYmJhYy00NDg1LThjNTEtNzUzZGQ1ZTJmOTU1XkEyXkFqcGc@._V1_.jpg",
+        "synopsis": "Things go wrong for a group of girl friends who go to Goa, for a bachelorette party.",
+        "genre": "Adventure, Thriller",
+        "imdb_id": "tt10610440"
+      },
+      {
+        "slug": "tom-dick-and-harry-2",
+        "title": "Tom, Dick and Harry 2 (Tom Dick and Harry Returns)",
+        "year": 2017,
+        "role": "Director",
+        "status": "Released",
+        "poster": "assets/films/tom-dick-and-harry-2.jpg",
+        "poster_source": "https://m.media-amazon.com/images/M/MV5BNWM1NDMyOTktMGM3ZS00M2M5LTliMDMtMGI2ZWYwZmM1YzZiXkEyXkFqcGc@._V1_.jpg",
+        "synopsis": "Three struggling friends hit upon new means to live a happy life by impersonating cops. Wearing the uniform makes them an overnight neighborhood sensation, but life changes when these fake heroes get tangled with mafia and goons.",
+        "genre": "Comedy",
+        "imdb_id": "tt6009232"
+      },
+      {
+        "slug": "do-lafzon-ki-kahani",
+        "title": "Do Lafzon Ki Kahani",
+        "year": 2016,
+        "role": "Director+Producer",
+        "status": "Released",
+        "poster": "assets/films/do-lafzon-ki-kahani.jpg",
+        "poster_source": "https://m.media-amazon.com/images/M/MV5BZTJiYmVlYzItMDI4Ni00MDgzLWIwYmEtNzljMDQxOThmZjRmXkEyXkFqcGc@._V1_.jpg",
+        "synopsis": "Centered on ex-mixed martial arts artist Sooraj (Randeep Hooda) and sculptor artist Jenny (Kajal Aggarwal). Their fate intertwines when their pasts are revealed in their blooming relationship.",
+        "genre": "Action, Drama, Romance",
+        "imdb_id": "tt4857886",
+        "producer_credit": "associate producer / co-producer"
+      },
+      {
+        "slug": "fox",
+        "title": "Fox",
+        "year": 2009,
+        "role": "Director+Producer",
+        "status": "Released",
+        "poster": "assets/films/fox.jpg",
+        "poster_source": "https://m.media-amazon.com/images/M/MV5BZmNkYWIwNjktNzU2Yy00YjhhLWJjNzYtNzQ2Zjk1Mjk4NzE3XkEyXkFqcGc@._V1_.jpg",
+        "synopsis": "A disgraced lawyer-turned-author is arrested for multiple homicides.",
+        "genre": "Crime, Drama, Mystery",
+        "imdb_id": "tt1324076",
+        "producer_credit": "associate producer"
+      },
+      {
+        "slug": "tom-dick-and-harry",
+        "title": "Tom, Dick, and Harry",
+        "year": 2006,
+        "role": "Director",
+        "status": "Released",
+        "poster": "assets/films/tom-dick-and-harry.jpg",
+        "poster_source": "https://m.media-amazon.com/images/M/MV5BODQ0ZGM3ZTktYmEwMC00Y2VmLTk5N2YtYzg1MTkzYTFiMGQ0XkEyXkFqcGc@._V1_.jpg",
+        "synopsis": "Three disabled friends - deaf Tom, blind Dick and dumb Harry - get caught up in a whirlwind adventure involving two beautiful girls, a kidnapping and a ton of cash.",
+        "genre": "Action, Comedy, Romance",
+        "imdb_id": "tt0476888"
+      },
+      {
+        "slug": "fareb",
+        "title": "Fareb",
+        "year": 2005,
+        "role": "Director",
+        "status": "Released",
+        "poster": "assets/films/fareb.jpg",
+        "poster_source": "https://m.media-amazon.com/images/M/MV5BOTk4NmUzNTEtMGZiYi00ZWRjLWFiOWMtMmQzN2IzMTA2YmFmXkEyXkFqcGc@._V1_.jpg",
+        "synopsis": "Ria Singhania lives a wealthy lifestyle with her husband Amit and runs Spykar Jeans. One night she gets a call that her husband has been found dead, possibly murdered, and she co-operates with the police investigation.",
+        "genre": "Drama, Romance, Thriller",
+        "imdb_id": "tt0444820"
+      },
+      {
+        "slug": "khamoshh-khauff-ki-raat",
+        "title": "Khamoshh... Khauff Ki Raat",
+        "year": 2005,
+        "role": "Director+Producer",
+        "status": "Released",
+        "poster": "assets/films/khamoshh.jpg",
+        "poster_source": "https://m.media-amazon.com/images/M/MV5BMjA1MmM2MjItZTIwNC00Y2FlLWI2ZjYtYzcyZDQzMDA1ODUwXkEyXkFqcGc@._V1_.jpg",
+        "synopsis": "While travelling on a rainy night with his boss, an arrogant actress, Avinash ends up hitting a woman with his car. They all get stranded at a motel with a few more people, one of whom is a killer.",
+        "genre": "Horror, Mystery, Thriller",
+        "imdb_id": "tt0437279"
+      },
+      {
+        "slug": "oops",
+        "title": "Oops!",
+        "year": 2003,
+        "role": "Director+Producer",
+        "status": "Released",
+        "poster": "assets/films/oops.jpg",
+        "poster_source": "https://m.media-amazon.com/images/M/MV5BMDUyY2Q0NWYtNGEwMy00NWE3LWE2YjItMTlhNTg0ZmQ5YWFmXkEyXkFqcGc@._V1_.jpg",
+        "synopsis": "Dancer Jahaan has a group that includes his girlfriend Nikki and bosom pal Akash Rai. While Nikki and Akash are content to wait for their big-time, Jahaan wants it now.",
+        "genre": "Comedy, Drama",
+        "imdb_id": "tt0354786"
+      },
+      {
+        "slug": "dial-100",
+        "title": "Dial 100",
+        "year": 2001,
+        "role": "Director+Producer",
+        "status": "Released",
+        "poster": null,
+        "poster_source": null,
+        "synopsis": "Crime/police TV series; Deepak Tijori directed and produced one episode (2001).",
+        "genre": "Crime, TV Series",
+        "imdb_id": "tt4603546",
+        "format": "TV Series (1 episode)"
+      },
+      {
+        "slug": "khauff",
+        "title": "Khauff",
+        "year": 2000,
+        "role": "Producer",
+        "status": "Released",
+        "poster": null,
+        "poster_source": null,
+        "synopsis": "Indian crime/thriller television series produced by Deepak Tijori.",
+        "genre": "TV Series",
+        "imdb_id": "tt27263007"
+      }
+    ],
+    "upcoming": [
+      {
+        "slug": "misfired-bali-9",
+        "title": "Misfired - Bali 9",
+        "role": "Producer (in development)",
+        "status": "In development",
+        "poster": null,
+        "poster_source": null,
+        "synopsis": "Project listed under Deepak Tijori's IMDb 'Projects in development' (IMDbPro). Likely tied to Alliance Productions India's international slate.",
+        "genre": "Feature film (TBA)"
+      },
+      {
+        "slug": "tom-dick-and-mary",
+        "title": "Tom Dick & Mary",
+        "role": "Director / Producer (in development)",
+        "status": "In development",
+        "poster": null,
+        "poster_source": null,
+        "synopsis": "Project listed under Deepak Tijori's IMDb 'Projects in development' (IMDbPro). Continuation/spin-off of the 'Tom, Dick and Harry' franchise that he created and directed.",
+        "genre": "Comedy (TBA)"
+      },
+      {
+        "slug": "australia-international-feature",
+        "title": "Australia-based International Feature",
+        "role": "Producer",
+        "status": "Pre-production (2025-26)",
+        "poster": null,
+        "poster_source": null,
+        "synopsis": "Internationally positioned feature film being developed and packaged through Alliance Productions India LLP for cross-border collaboration. Mentioned in company materials and corroborated by Mandeep Kaur Tijori's IMDb bio describing a Hindi-language feature plus a biographical sports feature based on a globally recognized footballer.",
+        "genre": "Feature film (TBA)"
+      }
+    ],
+    "music_videos": [
+      {"title": "Tu He Main", "year": 2026, "role": "Director+Producer+Writer+DP+Editor"},
+      {"title": "Kahun na Kahun", "year": 2026, "role": "Producer / lyrics writer"},
+      {"title": "O Jaane Jaan", "year": 2024, "role": "Director+Producer+Writer+DP+Editor+Composer"},
+      {"title": "Gumshuda", "year": 2024, "role": "Producer / Director (voice)"}
+    ],
+    "bio": "Deepak Tijori is an award-winning Indian actor, writer, and filmmaker whose body of work both in front of and behind the camera has left an indelible mark on Indian cinema and is increasingly resonating on the international stage. With a career spanning over three decades, he has become a respected name in global film circles, known for emotionally charged performances and bold, genre-defining storytelling. He first gained prominence through iconic roles in Bollywood classics such as Aashiqui (1990), Khiladi (1992), Jo Jeeta Wohi Sikandar (1992), Kabhi Haan Kabhi Naa (1994), Anjaam (1994), Ghulam (1998), and Baadshah (1999).",
+    "born": "August 28, 1961, Bombay, Maharashtra, India",
+    "awards": "9 wins total"
+  },
+  "anita_sharma": {
+    "imdb_url": "https://www.imdb.com/name/nm12129765/",
+    "name": "Anita Sharma",
+    "role": "Music Department, Director, Producer (Co-Producer of Tipppsy); singer and live performer",
+    "headshot": "assets/people/anita-sharma.png",
+    "headshot_source": "https://m.media-amazon.com/images/M/MV5BZGRjYjQyM2EtOTgyZi00M2RmLWFiZGUtODY1M2EzZTI5ZWNjXkEyXkFqcGc@._V1_CR0,0,1847,2771_.jpg",
+    "bio": "Anita Sharma is an Indian creative professional whose work spans film production, music direction, and live performance. Based in Mumbai, she has been actively associated with the Indian entertainment industry through her work in cinema and music. Anita was Co-Producer of the Bollywood feature film 'Tipppsy' directed by Deepak Tijori. Following Tipppsy, she has begun exploring new avenues as an independent producer with the vision of developing and supporting new film and music projects. She has also stepped into the role of Music Video Director, directing a music video produced under the music label Tijori Music. Born in Mumbai and raised in Jamnagar, Gujarat, she developed her passion for music during her teenage years. Her energetic stage presence made her a widely recognized live performer during the Navratri festival circuit, where audiences fondly refer to her as the 'Gujarati Shakira.' She has performed across international stages and attends global festivals including Cannes.",
+    "credits": [
+      {"title": "Tipppsy", "year": 2024, "role": "Co-producer; playback singer"},
+      {"title": "O Jaane Jaan", "year": 2024, "role": "Music Department - playback singer", "format": "Music Video"},
+      {"title": "Kahun na Kahun", "year": 2026, "role": "Director", "format": "Music Video"}
+    ]
+  },
+  "mandeep_kaur_tijori": {
+    "imdb_url": "https://www.imdb.com/name/nm11146806/",
+    "name": "Mandeep Kaur Sandhu (Mandeep Kaur Tijori)",
+    "role": "Producer / Actor / Director - Alliance Productions India LLP",
+    "headshot": "assets/people/mandeep-kaur-tijori.png",
+    "headshot_source": "https://m.media-amazon.com/images/M/MV5BYWQ0ZGYwOGUtY2I3NS00NTEyLWI4MGUtYTRlMzhlZDIwMmFlXkEyXkFqcGc@._V1_.jpg",
+    "born": "January 14, 1985, India",
+    "spouse": "Deepak Tijori (married January 10, 2024)",
+    "bio": "Mandeep Kaur Sandhu is an emerging film producer and actor actively engaged in internationally positioned cinema. As Director of Alliance Productions India LLP, she is involved in the development, packaging, and strategic production of both Indian and global feature films. Her current slate includes the production of a Hindi-language feature under Alliance Productions, alongside the development and international packaging of a biographical sports feature based on the life of a globally recognized footballer. The project is structured for cross-border collaboration and international market positioning, with formal announcements to follow. Mandeep's producing approach emphasizes performance-driven storytelling, culturally resonant narratives, and projects designed for strategic market engagement.",
+    "credits": [
+      {"title": "Tipppsy", "year": 2024, "role": "Actress (Jessy)"},
+      {"title": "Tu He Main", "year": 2026, "role": "Actress", "format": "Music Video"},
+      {"title": "O Jaane Jaan", "year": 2024, "role": "Actress (Lover)", "format": "Music Video"},
+      {"title": "Gumshuda", "year": 2024, "role": "Actress", "format": "Music Video"},
+      {"title": "Tom Dick & Mary", "role": "Producer", "status": "In development"},
+      {"title": "Misfired - Bali 9", "role": "Producer", "status": "In development"}
+    ]
+  }
+}
