@@ -325,7 +325,9 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.78) 100%);
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.45) 30%, rgba(0,0,0,.92) 100%),
+    linear-gradient(90deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,.25) 50%, rgba(0,0,0,.45) 100%);
 }
 .hero__slide.is-active { opacity: 1; }
 
@@ -336,35 +338,44 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   min-height: clamp(560px, 78vh, 820px);
   display: flex;
   align-items: flex-end;
-  padding-bottom: clamp(48px, 8vw, 96px);
-  padding-top: 80px;
+  padding-bottom: clamp(56px, 9vw, 110px);
+  padding-top: 100px;
 }
 
 .hero__copy { max-width: 880px; }
 .hero__eyebrow {
   display: inline-block;
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.24em;
+  font-weight: 700;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  margin-bottom: 18px;
-  padding: 6px 14px;
-  border: 1px solid rgba(255,255,255,.36);
+  margin-bottom: 22px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,.5);
   border-radius: 999px;
   color: var(--white);
+  background: rgba(0,0,0,.28);
+  backdrop-filter: blur(6px);
 }
 .hero h1 {
   color: var(--white);
-  font-size: clamp(40px, 6.4vw, 88px);
-  line-height: 1.05;
-  margin: 0 0 20px;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7.2vw, 104px);
+  line-height: 1.02;
+  margin: 0 0 22px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-shadow: 0 4px 30px rgba(0,0,0,.55);
+  max-width: 12ch;
 }
 .hero p {
-  color: rgba(255,255,255,.86);
-  font-size: clamp(15px, 1.4vw, 18px);
+  color: rgba(255,255,255,.94);
+  font-size: clamp(16px, 1.5vw, 20px);
+  font-weight: 400;
   max-width: 620px;
-  margin: 0 0 32px;
+  margin: 0 0 36px;
+  line-height: 1.6;
+  text-shadow: 0 2px 14px rgba(0,0,0,.5);
 }
 
 .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -640,6 +651,26 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .film-meta-row dl { margin: 0; }
 .film-meta-row dt { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,.56); margin-bottom: 6px; }
 .film-meta-row dd { margin: 0; font-size: 15px; font-weight: 500; color: var(--white); }
+
+/* ─── External resources block (IMDb link on film pages) ─ */
+
+.external-block {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.external-block h2 { font-size: clamp(22px, 2.8vw, 30px); font-family: var(--font-sans); font-weight: 600; margin: 0 0 8px; letter-spacing: -0.005em; }
+.external-block p { margin: 0; color: var(--muted); font-size: 15px; max-width: 520px; }
+.external-block .eyebrow { margin-bottom: 6px; }
+.external-block__actions { display: flex; gap: 10px; flex-wrap: wrap; }
+@media (max-width: 700px) {
+  .external-block { grid-template-columns: 1fr; }
+  .external-block__actions { width: 100%; }
+}
 
 /* ─── Stats / capabilities row ────────────────────────── */
 
