@@ -115,6 +115,34 @@
     input.addEventListener('input', (e) => render(e.target.value));
   }
 
+  /* ─── Trailer modal (mi-amor style click-to-play) ──── */
+  function initTrailerModal() {
+    const modal = document.getElementById('trailerModal');
+    if (!modal) return;
+    const embed = document.getElementById('trailerEmbed');
+
+    function open(videoId) {
+      embed.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" title="Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      embed.innerHTML = '';   // stops the video
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-trailer]').forEach(btn => {
+      btn.addEventListener('click', () => open(btn.getAttribute('data-trailer')));
+    });
+    modal.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', close));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+    });
+  }
+
   /* ─── Mobile nav ───────────────────────────────────── */
   function initMobileNav() {
     const toggle = document.querySelector('.menu-toggle');
@@ -158,6 +186,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     initHero();
     initSearch();
+    initTrailerModal();
     initMobileNav();
     initReveal();
     initActiveNav();
