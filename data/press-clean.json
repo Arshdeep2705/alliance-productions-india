@@ -1,0 +1,117 @@
+{
+  "_notes": "Curated clean press for an investor-facing site. Articles with low ratings (1/5, 1.5/5, 2/5), tabloid framings (BLAST, TORTURING, drivel, tedious), shelved-film stories, vanity/bragging anecdotes, protest/controversy stories, and aggregator pages exposing scores have been removed. Films with fewer than 3 high-quality articles have their press section dropped — the External Resources block (IMDb + Full Credits + YouTube trailer) carries the load instead.",
+  "films": {
+    "tipppsy": [
+      {
+        "title": "Tipppsy: official film page",
+        "source": "Bollywood Hungama",
+        "url": "https://www.bollywoodhungama.com/movie/tipppsy/",
+        "excerpt": "Official film page with cast, music, trailers and gallery for Deepak Tijori's 2024 directorial."
+      },
+      {
+        "title": "EXCLUSIVE: Deepak Tijori talks about making a comeback in films as actor-director with Tipppsy",
+        "source": "Bollywood Hungama",
+        "url": "https://www.bollywoodhungama.com/news/features/exclusive-deepak-tijori-talks-making-comeback-films-actor-director-tipppsy-reveals-since-worked-shah-rukh-aamir-khan-can-access-easily-h/",
+        "excerpt": "Long-form interview ahead of Tipppsy's release on his return to acting and direction, his peer relationships in the industry, and his approach to leading a feature today."
+      },
+      {
+        "title": "Trailer of Tipppsy out, Pooja Bhatt gives shoutout",
+        "source": "ThePrint",
+        "url": "https://theprint.in/feature/trailer-of-deepak-tijoris-directorial-tipppsy-out-pooja-bhatt-gives-shoutout/2057385/",
+        "excerpt": "Pooja Bhatt and Mahesh Bhatt joined the trailer launch of Tipppsy in Mumbai, with Pooja publicly endorsing Tijori's directorial return."
+      },
+      {
+        "title": "BREAKING: Deepak Tijori's Tipppsy to release in cinemas on May 10",
+        "source": "Bollywood Hungama",
+        "url": "https://www.bollywoodhungama.com/news/bollywood/breaking-deepak-tijoris-tipppsy-release-cinemas-may-10-trailer-may-2/",
+        "excerpt": "Release date and trailer drop confirmed — Tijori's directorial return produced by Raju Chadha and Deepak Tijori, distributed by Panorama Studios."
+      },
+      {
+        "title": "Deepak Tijori on his casting philosophy for Tipppsy",
+        "source": "Filmibeat",
+        "url": "https://www.filmibeat.com/bollywood/news/2024/deepak-tijori-tipppsy-movie-exclusive-interview-reveals-why-he-did-not-cast-any-female-super-stars-395753.html",
+        "excerpt": "Tijori on age-appropriate roles, his belief in the De Niro / Pacino model, and his approach to casting for the feature."
+      }
+    ],
+    "tom-dick-and-harry-2": [
+      {
+        "title": "'Tom, Dick, and Harry 2' will be a clean comedy: Deepak Tijori",
+        "source": "Deccan Herald",
+        "url": "https://www.deccanherald.com/content/553544/tom-dick-harry-2-clean.html",
+        "excerpt": "Tijori frames the sequel as a clean family comedy, scripted by Neeraj Vora, with no double-meaning dialogue."
+      },
+      {
+        "title": "Tom Dick and Harry 2 will be a clean family comedy: Deepak Tijori",
+        "source": "BollywoodLife",
+        "url": "https://www.bollywoodlife.com/news-gossip/tom-dick-and-harry-2-will-be-a-clean-family-comedy-says-deepak-tijori-741239/",
+        "excerpt": "Coverage of Tijori's pitch for the sequel and the ensemble cast."
+      },
+      {
+        "title": "'Tom, Dick, and Harry 2' will be a clean comedy: Tijori",
+        "source": "Business Standard (PTI)",
+        "url": "https://www.business-standard.com/article/pti-stories/tom-dick-and-harry-2-will-be-a-clean-comedy-tijori-116062100267_1.html",
+        "excerpt": "PTI wire syndication on the writer Neeraj Vora-scripted sequel."
+      }
+    ],
+    "do-lafzon-ki-kahani": [],
+    "fox": [],
+    "tom-dick-and-harry": [],
+    "fareb": [],
+    "khamoshh-khauff-ki-raat": [],
+    "oops": []
+  },
+  "removed_log": {
+    "news_page": [
+      { "title": "EXPLOSIVE: Deepak Tijori BLASTS CBFC for 'TORTURING' him during the certification of Tipppsy", "source": "Bollywood Hungama", "reason": "Tabloid framing of regulator conflict — investor-negative." },
+      { "title": "EXCLUSIVE: Deepak Tijori opens up on the status of Tipppsy and Tom Dick And Harry 2", "source": "Bollywood Hungama", "reason": "References shelving of Tom Dick and Harry 2 due to production issues." },
+      { "title": "EXCLUSIVE: ECSTATIC for first ever nomination... breaks silence on 90s snubs", "source": "Bollywood Hungama", "reason": "Title frames career via 'snubs' — negative tone for an investor narrative." },
+      { "title": "Deepak Tijori reveals he spent his money to get featured on Aashiqui posters", "source": "DNA India", "reason": "Vanity / self-funded poster anecdote and Akshay Kumar comparison — investor-negative framing." }
+    ],
+    "tipppsy": [
+      { "title": "EXPLOSIVE: Deepak Tijori BLASTS CBFC for 'TORTURING' him during the certification process", "source": "Bollywood Hungama", "reason": "Hostile regulator-conflict framing." },
+      { "title": "Tipppsy Review (10 May 2024)", "source": "Film Information", "reason": "Rating not verifiable from headline — removed as a precaution." }
+    ],
+    "tom-dick-and-harry-2": [
+      { "title": "Deepak Tijori Confirms Tom Dick and Harry 2 Being Canned Due To Production Issues", "source": "MovieTalkies", "reason": "Confirms cancellation — investor-negative." },
+      { "title": "Tom, Dick and Harry 2 (2017) — IMDb listing", "source": "IMDb", "reason": "Shifted to External Resources block instead of press card." }
+    ],
+    "do-lafzon-ki-kahani": [
+      { "title": "Do Lafzon Ki Kahani Movie Review (2/5)", "source": "Times of India", "reason": "Low critic score." },
+      { "title": "Film review: Do Lafzon Ki Kahani", "source": "Livemint", "reason": "Critique of the Korean remake — verdict ambiguous." },
+      { "title": "Do Lafzon Ki Kahani movie review", "source": "India.com", "reason": "Mixed verdict ('uneven script')." },
+      { "title": "Do Lafzon Ki Kahani Review", "source": "Koimoi", "reason": "Outlet trends harsh — risk of negative critic score." },
+      { "title": "Wikipedia article", "source": "Wikipedia", "reason": "Shifted to External Resources block." }
+    ],
+    "fox": [
+      { "title": "Fox Review (1.5/5)", "source": "Bollywood Hungama (Taran Adarsh)", "reason": "Low critic score." },
+      { "title": "Fox — slyest thing around but half-cunning it is", "source": "Wogma", "reason": "Negative review headline." },
+      { "title": "Fox (2009)", "source": "Rotten Tomatoes", "reason": "Aggregator exposes critic score." },
+      { "title": "Wikipedia article", "source": "Wikipedia", "reason": "Shifted to External Resources block." }
+    ],
+    "tom-dick-and-harry": [
+      { "title": "Tom Dick and Harry Review (1/5)", "source": "Bollywood Hungama (Taran Adarsh)", "reason": "Low critic score." },
+      { "title": "Tom, Dick and Harry", "source": "Sify", "reason": "Verdict ambiguous; precaution." },
+      { "title": "Tom Dick Harry review", "source": "IndiaGlitz", "reason": "Verdict ambiguous; precaution." },
+      { "title": "Tom Dick and Harry Music Review", "source": "Bollywood Hungama", "reason": "Associated with low-rated feature." },
+      { "title": "Wikipedia article", "source": "Wikipedia", "reason": "Shifted to External Resources block." }
+    ],
+    "fareb": [
+      { "title": "Fareb Review (2/5)", "source": "Bollywood Hungama (Taran Adarsh)", "reason": "Low critic score (positive cast quotes embedded)." },
+      { "title": "Fareb", "source": "Rotten Tomatoes", "reason": "Aggregator exposes scores." },
+      { "title": "Fareb (2005)", "source": "Letterboxd", "reason": "User-review aggregator." },
+      { "title": "Wikipedia article", "source": "Wikipedia", "reason": "Shifted to External Resources block." }
+    ],
+    "khamoshh-khauff-ki-raat": [
+      { "title": "This Drivel That Year: 20 Years Of Khamoshh", "source": "BollySpice", "reason": "'Drivel' framing in headline." },
+      { "title": "Khamosh ... Khauff Ki Raat", "source": "Rotten Tomatoes", "reason": "Aggregator exposes scores." },
+      { "title": "Wikipedia article", "source": "Wikipedia", "reason": "Shifted to External Resources block." },
+      { "title": "IMDb listing", "source": "IMDb", "reason": "Shifted to External Resources block." }
+    ],
+    "oops": [
+      { "title": "Oops? Review (1.5/5)", "source": "Bollywood Hungama (Taran Adarsh)", "reason": "Low critic score." },
+      { "title": "Oops! (film) Wikipedia", "source": "Wikipedia", "reason": "Excerpt referenced 'protests pre-release' — controversy framing." },
+      { "title": "Oops! — Movie", "source": "Box Office India", "reason": "Box-office record exposes commercial performance." },
+      { "title": "Oops! (2003)", "source": "Letterboxd", "reason": "User-review aggregator." }
+    ]
+  }
+}

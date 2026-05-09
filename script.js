@@ -37,7 +37,7 @@
     { title: 'Oops!', meta: 'Film · Director, Producer', href: 'films/oops/', img: 'assets/films/oops-w800.jpg' },
     { title: 'Tom, Dick and Harry 3', meta: 'Upcoming · In development', href: 'upcoming/', img: 'assets/films/tom-dick-and-harry-2-w800.jpg' },
     { title: 'Misfired — Bali 9', meta: 'Upcoming · In development', href: 'upcoming/', img: 'assets/films/fareb-w800.jpg' },
-    { title: 'Australia International Feature', meta: 'Upcoming · Pre-production', href: 'upcoming/', img: 'assets/films/do-lafzon-ki-kahani-w800.jpg' },
+    { title: 'Untitled Hollywood Feature', meta: 'Upcoming · Pre-production', href: 'upcoming/', img: 'assets/films/do-lafzon-ki-kahani-w800.jpg' },
     { title: 'Deepak Tijori', meta: 'Managing Director', href: 'people/deepak-tijori/', img: 'assets/people/deepak-tijori-w800.jpg' },
     { title: 'Snehal Kulshreshtha', meta: 'Director · PR & Global Outreach', href: 'people/snehal-kulshreshtha/', img: 'assets/people/snehal-kulshreshtha-w800.jpg' },
     { title: 'Anita Sharma', meta: 'Co-Producer · Music Director', href: 'people/anita-sharma/', img: 'assets/people/anita-sharma-w800.jpg' },
