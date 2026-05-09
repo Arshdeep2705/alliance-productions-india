@@ -6,11 +6,11 @@
   <title>Submit a project — Alliance Productions India LLP</title>
   <meta name="description" content="Submit a feature, short or series project to Alliance Productions India LLP." />
   <link rel="icon" href="../assets/logo/api-emblem-w200.png" />
-  <link rel="stylesheet" href="../styles.css?v=1778293964070" />
+  <link rel="stylesheet" href="../styles.css?v=1778334251130" />
 </head>
 <body>
-
-  <header class="site-header">
+  <a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
     <div class="container">
       <div class="site-header__inner">
         <a class="brand" href="../" aria-label="Alliance Productions India LLP">
@@ -42,7 +42,7 @@
     </div>
   </header>
 
-  <section class="page-banner">
+  <section id="main" tabindex="-1" class="page-banner">
     <div class="container">
       <span class="eyebrow">Submissions</span>
       <h1>Submit a project</h1>
@@ -52,40 +52,46 @@
 
   <section class="section section--alt">
     <div class="container">
-      <form class="pitch-form reveal" action="mailto:info@allianceproductionsindia.com" method="post" enctype="text/plain">
+      <form class="pitch-form reveal" novalidate
+            data-recipient="info@allianceproductionsindia.com"
+            data-subject="Project submission — Alliance Productions India">
         <div class="form-row">
-          <label for="title">Project title</label>
-          <input type="text" id="title" name="title" required placeholder="Working title" />
+          <label for="title" class="is-required"><span>Project title</span></label>
+          <input type="text" id="title" name="title" required placeholder="Working title" autocomplete="off" />
+          <p class="field-helper">The working title — final naming can change later.</p>
         </div>
         <div class="form-row">
-          <label for="type">Project type</label>
+          <label for="type" class="is-required"><span>Project type</span></label>
           <select id="type" name="type" required>
-            <option value="">Select…</option>
+            <option value="">Select a project type…</option>
             <option value="feature">Feature</option>
             <option value="short">Short</option>
             <option value="series">Series</option>
           </select>
         </div>
         <div class="form-row">
-          <label for="logline">Logline</label>
-          <textarea id="logline" name="logline" rows="4" required placeholder="One or two sentences — the hook, the world, the stakes."></textarea>
+          <label for="logline" class="is-required"><span>Logline</span></label>
+          <textarea id="logline" name="logline" rows="4" required minlength="20" placeholder="One or two sentences — the hook, the world, the stakes."></textarea>
+          <p class="field-helper">A short, vivid pitch. 1–2 sentences ideal.</p>
         </div>
         <div class="form-row">
-          <label for="name">Contact name</label>
-          <input type="text" id="name" name="name" required />
+          <label for="name" class="is-required"><span>Contact name</span></label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
         </div>
         <div class="form-row">
-          <label for="email">Contact email</label>
-          <input type="email" id="email" name="email" required />
+          <label for="email" class="is-required"><span>Contact email</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="name@example.com" />
         </div>
         <div class="form-row">
-          <label for="deck">Deck URL</label>
-          <input type="url" id="deck" name="deck" placeholder="https://…  (Drive, Dropbox, WeTransfer)" />
+          <label for="deck"><span>Deck URL</span></label>
+          <input type="url" id="deck" name="deck" placeholder="https://…  (Drive, Dropbox, WeTransfer)" autocomplete="off" />
+          <p class="field-helper">Optional — paste a link to a PDF or pitch deck.</p>
         </div>
         <div class="form-row form-row--actions">
           <button type="submit" class="btn btn--solid">Submit project</button>
           <span class="form-note">We only respond to submissions we want to develop further.</span>
         </div>
+        <div class="form-status" role="status" aria-live="polite"></div>
       </form>
     </div>
   </section>
@@ -122,6 +128,6 @@
     </div>
   </div>
 
-  <script src="../script.js?v=1778293964070"></script>
+  <script src="../script.js?v=1778334251130"></script>
 </body>
 </html>

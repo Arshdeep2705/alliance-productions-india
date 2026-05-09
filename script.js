@@ -75,9 +75,109 @@
       dotsWrap.querySelectorAll('button').forEach((b, i) => b.addEventListener('click', () => { go(i); restart(); }));
     }
 
-    function restart() { clearInterval(timer); timer = setInterval(() => go(idx + 1), 6000); }
+    function restart() {
+      clearInterval(timer);
+      // Honour reduced-motion: hold on slide 1 instead of auto-cycling
+      if (prefersReducedMotion) return;
+      timer = setInterval(() => go(idx + 1), 6000);
+    }
     go(0);
     restart();
+  }
+
+  /* ─── Form validation (Submit + Contact) ───────────── */
+  function initForms() {
+    const forms = document.querySelectorAll('form.pitch-form');
+    if (!forms.length) return;
+
+    forms.forEach(form => {
+      const status = form.querySelector('.form-status') || (() => {
+        const el = document.createElement('div');
+        el.className = 'form-status';
+        el.setAttribute('role', 'status');
+        el.setAttribute('aria-live', 'polite');
+        form.appendChild(el);
+        return el;
+      })();
+
+      function validateField(field) {
+        const wrap = field.closest('label') || field.parentElement;
+        let err = wrap.querySelector('.field-error');
+        const validity = field.validity;
+        let msg = '';
+
+        if (validity.valueMissing) msg = 'This field is required.';
+        else if (validity.typeMismatch && field.type === 'email') msg = 'Please enter a valid email address.';
+        else if (validity.tooShort) msg = 'Please add a little more detail.';
+        else if (!validity.valid) msg = field.validationMessage || 'Please check this field.';
+
+        if (msg) {
+          field.setAttribute('aria-invalid', 'true');
+          if (!err) {
+            err = document.createElement('div');
+            err.className = 'field-error';
+            err.setAttribute('role', 'alert');
+            wrap.appendChild(err);
+          }
+          err.textContent = msg;
+          err.classList.add('is-shown');
+          return false;
+        } else {
+          field.removeAttribute('aria-invalid');
+          if (err) err.classList.remove('is-shown');
+          return true;
+        }
+      }
+
+      // Validate on blur (skill rule: inline-validation on blur, not keystroke)
+      form.querySelectorAll('input, select, textarea').forEach(field => {
+        field.addEventListener('blur', () => {
+          if (field.value || field.required) validateField(field);
+        });
+        field.addEventListener('input', () => {
+          // Clear error as soon as the user starts fixing it
+          if (field.getAttribute('aria-invalid') === 'true' && field.validity.valid) {
+            field.removeAttribute('aria-invalid');
+            const wrap = field.closest('label') || field.parentElement;
+            const err = wrap.querySelector('.field-error');
+            if (err) err.classList.remove('is-shown');
+          }
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        let firstInvalid = null;
+        form.querySelectorAll('input, select, textarea').forEach(field => {
+          if (!validateField(field) && !firstInvalid) firstInvalid = field;
+        });
+
+        if (firstInvalid) {
+          status.className = 'form-status is-error';
+          status.textContent = 'Please correct the highlighted fields and try again.';
+          firstInvalid.focus();
+          return;
+        }
+
+        // Build mailto from collected values (no backend on a static site)
+        const data = {};
+        form.querySelectorAll('input, select, textarea').forEach(f => {
+          if (f.name) data[f.name] = f.value;
+        });
+        const recipient = form.dataset.recipient || 'info@allianceproductionsindia.com';
+        const subject = encodeURIComponent(form.dataset.subject || 'Enquiry — Alliance Productions India');
+        const body = encodeURIComponent(
+          Object.keys(data).map(k => k.replace(/_/g, ' ').toUpperCase() + ':\n' + data[k]).join('\n\n')
+        );
+
+        // Show success and open user's mail client
+        status.className = 'form-status is-success';
+        status.textContent = 'Thank you. Your default mail client will open in a moment with your details pre-filled.';
+        setTimeout(() => {
+          window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
+        }, 700);
+      });
+    });
   }
 
   /* ─── Search overlay ───────────────────────────────── */
@@ -177,9 +277,37 @@
   /* ─── Auto-set active nav ──────────────────────────── */
   function initActiveNav() {
     const p = window.location.pathname;
+    let matched = false;
     document.querySelectorAll('.main-nav a[data-key]').forEach(a => {
       const key = a.getAttribute('data-key');
-      if (key && p.indexOf('/' + key + '/') !== -1) a.classList.add('is-active');
+      if (key && key !== 'home' && p.indexOf('/' + key + '/') !== -1) {
+        a.classList.add('is-active');
+        a.setAttribute('aria-current', 'page');
+        matched = true;
+      }
+    });
+    // Home is the active page only when nothing else matched and we're at the site root
+    if (!matched) {
+      const homeLink = document.querySelector('.main-nav a[data-key="home"]');
+      if (homeLink) {
+        homeLink.classList.add('is-active');
+        homeLink.setAttribute('aria-current', 'page');
+      }
+    }
+  }
+
+  /* ─── Reduced-motion detection ─────────────────────── */
+  const prefersReducedMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ─── Image fallback for any broken poster/portrait ── */
+  function initImageFallbacks() {
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', function () {
+        this.classList.add('is-missing');
+        this.removeAttribute('src');           // stop browser's broken-image icon
+        this.setAttribute('alt', 'Image unavailable');
+      }, { once: true });
     });
   }
 
@@ -190,5 +318,7 @@
     initMobileNav();
     initReveal();
     initActiveNav();
+    initForms();
+    initImageFallbacks();
   });
 })();
