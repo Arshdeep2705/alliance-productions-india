@@ -222,7 +222,17 @@
     const embed = document.getElementById('trailerEmbed');
 
     function open(videoId) {
-      embed.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" title="Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      // Strip YouTube branding/related-videos as much as the embed API allows.
+      // youtube-nocookie.com = privacy-enhanced mode (no tracking cookies until play)
+      // rel=0 disables the related-videos grid at end (Same-channel only since 2018)
+      // modestbranding=1 hides the YouTube wordmark on the control bar
+      // iv_load_policy=3 hides video annotations
+      // playsinline=1 prevents iOS forced full-screen takeover
+      // color=white = white progress bar instead of red
+      // disablekb=0 keeps keyboard shortcuts
+      const params = 'autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&color=white&fs=1';
+      embed.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + videoId + '?' + params +
+        '" title="Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
       modal.classList.add('is-open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
