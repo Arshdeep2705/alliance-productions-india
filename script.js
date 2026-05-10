@@ -253,20 +253,56 @@
     });
   }
 
-  /* ─── Mobile nav ───────────────────────────────────── */
+  /* ─── Mobile nav (a11y + iOS-safe scroll-lock) ─────── */
   function initMobileNav() {
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.main-nav');
     if (!toggle || !nav) return;
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open);
-      document.body.style.overflow = open ? 'hidden' : '';
-    });
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+
+    // Make sure nav has an id so aria-controls works
+    if (!nav.id) nav.id = 'primary-nav';
+    toggle.setAttribute('aria-controls', nav.id);
+    toggle.setAttribute('aria-expanded', 'false');
+
+    let savedScrollY = 0;
+
+    function open() {
+      savedScrollY = window.scrollY;
+      nav.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      // iOS-safe scroll-lock — prevents rubber-band
+      document.body.style.position = 'fixed';
+      document.body.style.top = '-' + savedScrollY + 'px';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+      // Move focus into the nav for keyboard users
+      const firstLink = nav.querySelector('a');
+      if (firstLink) requestAnimationFrame(() => firstLink.focus());
+    }
+
+    function close(returnFocus) {
       nav.classList.remove('is-open');
-      document.body.style.overflow = '';
-    }));
+      toggle.setAttribute('aria-expanded', 'false');
+      // Release scroll-lock
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      window.scrollTo(0, savedScrollY);
+      if (returnFocus) toggle.focus();
+    }
+
+    toggle.addEventListener('click', () => {
+      if (nav.classList.contains('is-open')) close(true); else open();
+    });
+
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => close(false)));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) close(true);
+    });
   }
 
   /* ─── Scroll reveal ────────────────────────────────── */

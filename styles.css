@@ -231,11 +231,15 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 
 .menu-toggle {
   display: none;
-  width: 40px; height: 40px;
+  width: 44px; height: 44px;          /* WCAG / HIG touch target */
   border: 0;
   background: transparent;
   padding: 0;
+  border-radius: 50%;
+  transition: background var(--dur-fast) var(--ease-out-quart);
 }
+.menu-toggle:hover { background: rgba(0,0,0,.04); }
+.menu-toggle:active { transform: scale(0.96); }
 .menu-toggle span,
 .menu-toggle span::before,
 .menu-toggle span::after {
@@ -459,6 +463,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .film-card__poster img {
   width: 100%; height: 100%;
   object-fit: cover;
+  object-position: center top; /* keep title/lead-cast area visible if poster aspect ≠ 2:3 */
   transition: transform .6s ease, opacity .4s ease;
 }
 .film-card:hover .film-card__poster img { transform: scale(1.04); }
@@ -1236,6 +1241,55 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   .external-block__actions { width: 100%; }
 }
 
+/* ─── CTA pills (conversation types on partner block) ── */
+
+.cta-pills {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 4px;
+}
+.cta-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.32);
+  background: rgba(255,255,255,.06);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ─── Phalke / award badge (in-line accolade chip) ───── */
+
+.accolade-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(216, 173, 85, 0.14);
+  border: 1px solid rgba(216, 173, 85, 0.55);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+}
+.accolade-badge::before {
+  content: '';
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
 /* ─── Stats / capabilities row ────────────────────────── */
 
 .stats-row {
@@ -1246,7 +1300,9 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
-@media (max-width: 760px) { .stats-row { grid-template-columns: repeat(2, 1fr); } }
+.stats-row--six { grid-template-columns: repeat(6, 1fr); gap: 16px; }
+@media (max-width: 1080px) { .stats-row--six { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px)  { .stats-row { grid-template-columns: repeat(2, 1fr); } .stats-row--six { grid-template-columns: repeat(2, 1fr); } }
 .stat__num {
   font-family: var(--font-display);
   font-size: clamp(36px, 4.5vw, 56px);
@@ -1387,25 +1443,103 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 
 @media (max-width: 1080px) {
   .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+
+  /* CRITICAL FIX: drop backdrop-filter on the header at mobile widths.
+     A non-none backdrop-filter establishes a containing block for fixed-positioned
+     descendants — which trapped .main-nav inside the 96px header instead of the
+     viewport. Removing it on mobile fixes the bug AND eliminates iOS paint-thrash. */
+  .site-header {
+    background: rgba(255,255,255,.98);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  /* Cinematic dark mobile menu — solid background, white text, premium feel.
+     z-index above .site-header (50) so it overlays cleanly. */
   .main-nav {
     position: fixed;
     inset: var(--header-h) 0 0 0;
-    background: var(--white);
+    z-index: 60;
+    background: linear-gradient(180deg, #0a0a0a 0%, #141414 100%);
+    color: var(--white);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 32px clamp(20px, 4vw, 48px);
-    transform: translateY(-100%);
+    gap: 4px;
+    padding: 36px clamp(20px, 4vw, 48px) calc(env(safe-area-inset-bottom, 0) + 36px);
+    /* Animate opacity + clip-path instead of transform — GPU-cheap, no paint thrash */
     opacity: 0;
-    transition: transform .35s ease, opacity .25s ease;
+    clip-path: inset(0 0 100% 0);
+    transition: opacity var(--dur-base) var(--ease-out-quart),
+                clip-path var(--dur-base) var(--ease-out-quart);
     pointer-events: none;
-    border-top: 1px solid var(--line);
+    overflow-y: auto;
   }
-  .main-nav.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
-  .main-nav a { font-size: 24px; font-family: var(--font-display); font-weight: 500; padding: 12px 0; }
+  .main-nav.is-open {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    pointer-events: auto;
+  }
+  .main-nav a {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 32px;
+    color: rgba(255,255,255,.92);
+    padding: 14px 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    letter-spacing: -0.01em;
+    /* Stagger-fade each link in when menu opens */
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  .main-nav a::after {
+    background: linear-gradient(90deg, var(--saffron), var(--deep-emerald));
+    height: 2px;
+  }
+  .main-nav a.is-active { color: var(--saffron); }
+  .main-nav.is-open a {
+    animation: mobileNavIn .45s var(--ease-out-quart) both;
+  }
+  .main-nav.is-open a:nth-child(1){ animation-delay: 80ms; }
+  .main-nav.is-open a:nth-child(2){ animation-delay: 130ms; }
+  .main-nav.is-open a:nth-child(3){ animation-delay: 180ms; }
+  .main-nav.is-open a:nth-child(4){ animation-delay: 230ms; }
+  .main-nav.is-open a:nth-child(5){ animation-delay: 280ms; }
+  .main-nav.is-open a:nth-child(6){ animation-delay: 330ms; }
+  .main-nav.is-open a:nth-child(7){ animation-delay: 380ms; }
+
   .header-utils .social-row { display: none; }
   .header-utils .contact-btn { display: none; }
   .site-header__inner { grid-template-columns: auto 1fr auto auto; }
+}
+
+@keyframes mobileNavIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* When menu is open, animate the toggle to an "X" */
+.menu-toggle[aria-expanded="true"] span { background: transparent; }
+.menu-toggle[aria-expanded="true"] span::before {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] span::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+.menu-toggle span,
+.menu-toggle span::before,
+.menu-toggle span::after {
+  transition: transform var(--dur-fast) var(--ease-out-quart),
+              background var(--dur-fast) var(--ease-out-quart);
+}
+.menu-toggle[aria-expanded="true"] {
+  /* Toggle sits on dark menu when open — make it white */
+  color: var(--white);
+}
+.menu-toggle[aria-expanded="true"] span,
+.menu-toggle[aria-expanded="true"] span::before,
+.menu-toggle[aria-expanded="true"] span::after {
+  background: var(--white);
 }
 
 @media (max-width: 560px) {
@@ -1557,6 +1691,65 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   content: " *";
   color: var(--saffron);
 }
+
+/* ─── Premium-feel polish ─────────────────────────────── */
+
+/* Headlines wrap nicely without orphans */
+.hero h1, .person-hero h1, .movie-banner__title, .page-banner h1 {
+  text-wrap: balance;
+}
+
+/* iOS won't auto-zoom inputs at 16px+ */
+.pitch-form input,
+.pitch-form select,
+.pitch-form textarea,
+.search-overlay input { font-size: 16px; }
+
+/* Safe-area awareness for iPhones with home indicator */
+.site-footer {
+  padding-bottom: max(32px, calc(env(safe-area-inset-bottom, 0) + 16px));
+}
+
+/* Saffron→emerald active-link underline (desktop nav) */
+.main-nav a::after {
+  background: linear-gradient(90deg, var(--saffron), var(--deep-emerald));
+  height: 2px;
+}
+.main-nav a.is-active::after {
+  transform-origin: left;
+  animation: underlineIn .4s var(--ease-out-quart) .15s both;
+}
+@keyframes underlineIn {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Gradient hover border on film + person cards (premium-feeling micro-detail) */
+.film-card,
+.person-card,
+.press-card {
+  position: relative;
+  isolation: isolate;
+}
+.film-card::before,
+.person-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--saffron), var(--deep-emerald));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out-quart);
+  pointer-events: none;
+}
+.film-card:hover::before,
+.person-card:hover::before { opacity: 1; }
 
 /* ─── Image fallback (broken/missing assets) ────────── */
 
