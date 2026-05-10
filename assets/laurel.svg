@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- Left laurel half — symmetric C-curve of leaves opening upward -->
+  <g>
+    <!-- Main stem curve (left side) -->
+    <path d="M 60 200 C 30 165, 18 120, 26 70 C 30 50, 38 36, 48 28" />
+    <!-- Leaves on left, arranged along the stem from bottom to top -->
+    <ellipse cx="58" cy="186" rx="9" ry="3.5" transform="rotate(-50 58 186)" />
+    <ellipse cx="48" cy="170" rx="10" ry="4" transform="rotate(-65 48 170)" />
+    <ellipse cx="40" cy="152" rx="11" ry="4" transform="rotate(-75 40 152)" />
+    <ellipse cx="33" cy="132" rx="11" ry="4" transform="rotate(-85 33 132)" />
+    <ellipse cx="29" cy="110" rx="11" ry="4" transform="rotate(85 29 110)" />
+    <ellipse cx="29" cy="88"  rx="11" ry="4" transform="rotate(75 29 88)" />
+    <ellipse cx="33" cy="68"  rx="10" ry="4" transform="rotate(65 33 68)" />
+    <ellipse cx="40" cy="50"  rx="9"  ry="3.5" transform="rotate(55 40 50)" />
+    <ellipse cx="48" cy="36"  rx="8"  ry="3" transform="rotate(45 48 36)" />
+  </g>
+  <!-- Right laurel half (mirror of left) -->
+  <g>
+    <path d="M 140 200 C 170 165, 182 120, 174 70 C 170 50, 162 36, 152 28" />
+    <ellipse cx="142" cy="186" rx="9" ry="3.5" transform="rotate(50 142 186)" />
+    <ellipse cx="152" cy="170" rx="10" ry="4" transform="rotate(65 152 170)" />
+    <ellipse cx="160" cy="152" rx="11" ry="4" transform="rotate(75 160 152)" />
+    <ellipse cx="167" cy="132" rx="11" ry="4" transform="rotate(85 167 132)" />
+    <ellipse cx="171" cy="110" rx="11" ry="4" transform="rotate(-85 171 110)" />
+    <ellipse cx="171" cy="88"  rx="11" ry="4" transform="rotate(-75 171 88)" />
+    <ellipse cx="167" cy="68"  rx="10" ry="4" transform="rotate(-65 167 68)" />
+    <ellipse cx="160" cy="50"  rx="9"  ry="3.5" transform="rotate(-55 160 50)" />
+    <ellipse cx="152" cy="36"  rx="8"  ry="3" transform="rotate(-45 152 36)" />
+  </g>
+  <!-- Tiny leaves at the very top (closing the wreath subtly) -->
+  <ellipse cx="60" cy="22" rx="6" ry="2.5" transform="rotate(35 60 22)" />
+  <ellipse cx="140" cy="22" rx="6" ry="2.5" transform="rotate(-35 140 22)" />
+</svg>
