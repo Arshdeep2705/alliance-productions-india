@@ -31,7 +31,6 @@
     { title: 'Tipppsy', meta: 'Film · Director · ★★★★ Bhavikk Sangghvi', href: 'films/tipppsy/', img: 'assets/films/tipppsy-w800.jpg' },
     { title: 'Do Lafzon Ki Kahani', meta: 'Film · Director, Producer · Randeep Hooda', href: 'films/do-lafzon-ki-kahani/', img: 'assets/films/do-lafzon-ki-kahani-w800.jpg' },
     { title: 'Fox', meta: 'Film · Director, Producer', href: 'films/fox/', img: 'assets/films/fox-w800.jpg' },
-    { title: 'Tom, Dick and Harry 2', meta: 'Film · Director', href: 'films/tom-dick-and-harry-2/', img: 'assets/films/tom-dick-and-harry-2-w800.jpg' },
     { title: 'Tom, Dick, and Harry', meta: 'Film · Director', href: 'films/tom-dick-and-harry/', img: 'assets/films/tom-dick-and-harry-w800.jpg' },
     { title: 'Fareb', meta: 'Film · Director', href: 'films/fareb/', img: 'assets/films/fareb-w800.jpg' },
     { title: 'Khamoshh… Khauff Ki Raat', meta: 'Film · Director, Producer', href: 'films/khamoshh-khauff-ki-raat/', img: 'assets/films/khamoshh-w800.jpg' },
