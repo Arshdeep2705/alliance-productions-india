@@ -466,6 +466,14 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   object-position: center top; /* keep title/lead-cast area visible if poster aspect ≠ 2:3 */
   transition: transform .6s ease, opacity .4s ease;
 }
+/* Show the full poster (no crop) — for posters where the title block sits at the bottom edge */
+.film-card__poster--contain {
+  background: #1a1410;
+}
+.film-card__poster--contain img {
+  object-fit: contain;
+  object-position: center;
+}
 .film-card:hover .film-card__poster img { transform: scale(1.04); }
 .film-card__poster::after {
   content: '';
