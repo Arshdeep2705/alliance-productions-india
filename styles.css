@@ -1696,12 +1696,15 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 
 .flag-band {
   width: 100%;
-  height: 10px;
+  height: 38px;
+  margin-top: 18px;
+  margin-bottom: 6px;
   background: url('assets/brand/flag-wave-w1600.png') center / cover no-repeat;
-  background-color: var(--white);
-  opacity: 0.92;
+  background-color: transparent;
+  opacity: 0.55;
+  mix-blend-mode: multiply;
 }
-.flag-band--lg { height: 26px; }
+.flag-band--lg { height: 52px; }
 .flag-band--in-header {
   /* sits flush under the header */
   margin-top: -1px;
@@ -1836,6 +1839,141 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   color: var(--muted);
 }
 .critic-quote-card__outlet { display: block; font-size: 11px; color: var(--muted); margin-top: 4px; font-weight: 400; }
+
+.press-collage {
+  padding: clamp(48px, 7vw, 80px) 0;
+  background: var(--white);
+}
+.press-collage__head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(28px, 4vw, 40px);
+  padding: 0 clamp(16px, 3vw, 24px);
+}
+.press-collage__head .eyebrow { color: var(--saffron); margin-bottom: 10px; }
+.press-collage__head h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+.press-collage__sub {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+.press-collage__frame {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3vw, 32px);
+}
+.press-collage__frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 24px 60px -36px rgba(0,0,0,.35);
+}
+
+/* ─── Recognition strip — Awards / Comeback posters ──── */
+.recognition-strip {
+  padding: clamp(56px, 8vw, 96px) 0;
+  background: var(--off-white);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.recognition-strip__head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(32px, 4vw, 48px);
+  padding: 0 clamp(16px, 3vw, 24px);
+}
+.recognition-strip__head .eyebrow { color: var(--saffron); margin-bottom: 10px; }
+.recognition-strip__head h2 {
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+.recognition-strip__sub {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+.recognition-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(18px, 2.4vw, 28px);
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3vw, 32px);
+}
+.recognition-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.recognition-card__poster {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--ink);
+  aspect-ratio: 4 / 5;
+}
+.recognition-card__poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease-out-quart);
+}
+.recognition-card:hover .recognition-card__poster img { transform: scale(1.025); }
+.recognition-card__caption {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 14px;
+}
+
+/* ─── Trailer video block (HTML5) ─── */
+.trailer-video {
+  padding: clamp(40px, 6vw, 72px) 0;
+  background: var(--ink);
+  color: var(--white);
+}
+.trailer-video__head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(24px, 3vw, 36px);
+  padding: 0 clamp(16px, 3vw, 24px);
+}
+.trailer-video__head .eyebrow { color: var(--saffron); margin-bottom: 10px; }
+.trailer-video__head h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+  color: var(--white);
+}
+.trailer-video__frame {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3vw, 32px);
+}
+.trailer-video__frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 4px;
+}
 
 .critic-quotes-placeholder {
   max-width: 720px;
