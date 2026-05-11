@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="kh-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080808"/>
+      <stop offset="55%" stop-color="#0e1e26"/>
+      <stop offset="100%" stop-color="#020404"/>
+    </linearGradient>
+    <radialGradient id="kh-glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="rgba(255,255,255,.08)"/>
+      <stop offset="60%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1200" fill="url(#kh-bg)"/>
+  <rect width="800" height="1200" fill="url(#kh-glow)"/>
+
+  <!-- API emblem -->
+  <g transform="translate(400 280)" opacity=".16">
+    <text x="0" y="0" text-anchor="middle" font-family="'Arial Black',sans-serif" font-weight="900" font-size="180" fill="#75bd45" letter-spacing="-8">API</text>
+  </g>
+
+  <!-- Devanagari title (large) -->
+  <text x="400" y="660" text-anchor="middle" font-family="'Mangal','Noto Serif Devanagari','Cormorant Garamond',serif" font-weight="500" font-size="120" fill="#f4eee2">खोज</text>
+
+  <!-- Roman -->
+  <text x="400" y="740" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="38" letter-spacing="12" fill="#e8e0c8">KHOJ</text>
+
+  <!-- Divider -->
+  <line x1="340" y1="780" x2="460" y2="780" stroke="#75bd45" stroke-width="1.5"/>
+
+  <!-- Status -->
+  <text x="400" y="830" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" letter-spacing="6" fill="#a8c490">IN DEVELOPMENT</text>
+  <text x="400" y="870" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" letter-spacing="4" fill="#7a9670">DETAILS TO BE ANNOUNCED</text>
+
+  <!-- Studio -->
+  <text x="400" y="1100" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" letter-spacing="6" fill="#867253">ALLIANCE PRODUCTIONS INDIA LLP</text>
+</svg>

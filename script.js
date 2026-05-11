@@ -27,18 +27,23 @@
 
   /* ─── Search index ─────────────────────────────────── */
   const SEARCH_INDEX = [
-    { title: 'Tipppsy', meta: 'Film · Director', href: 'films/tipppsy/', img: 'assets/films/tipppsy-w800.jpg' },
-    { title: 'Tom, Dick and Harry 2', meta: 'Film · Director', href: 'films/tom-dick-and-harry-2/', img: 'assets/films/tom-dick-and-harry-2-w800.jpg' },
-    { title: 'Do Lafzon Ki Kahani', meta: 'Film · Director, Producer', href: 'films/do-lafzon-ki-kahani/', img: 'assets/films/do-lafzon-ki-kahani-w800.jpg' },
+    { title: 'Echoes of Us', meta: 'Festival short · 88+ international laurels', href: 'films/echoes-of-us/', img: 'assets/films/echoes-of-us-poster-w800.jpg' },
+    { title: 'Tipppsy', meta: 'Film · Director · ★★★★ Bhavikk Sangghvi', href: 'films/tipppsy/', img: 'assets/films/tipppsy-w800.jpg' },
+    { title: 'Do Lafzon Ki Kahani', meta: 'Film · Director, Producer · Randeep Hooda', href: 'films/do-lafzon-ki-kahani/', img: 'assets/films/do-lafzon-ki-kahani-w800.jpg' },
     { title: 'Fox', meta: 'Film · Director, Producer', href: 'films/fox/', img: 'assets/films/fox-w800.jpg' },
+    { title: 'Tom, Dick and Harry 2', meta: 'Film · Director', href: 'films/tom-dick-and-harry-2/', img: 'assets/films/tom-dick-and-harry-2-w800.jpg' },
     { title: 'Tom, Dick, and Harry', meta: 'Film · Director', href: 'films/tom-dick-and-harry/', img: 'assets/films/tom-dick-and-harry-w800.jpg' },
     { title: 'Fareb', meta: 'Film · Director', href: 'films/fareb/', img: 'assets/films/fareb-w800.jpg' },
     { title: 'Khamoshh… Khauff Ki Raat', meta: 'Film · Director, Producer', href: 'films/khamoshh-khauff-ki-raat/', img: 'assets/films/khamoshh-w800.jpg' },
     { title: 'Oops!', meta: 'Film · Director, Producer', href: 'films/oops/', img: 'assets/films/oops-w800.jpg' },
-    { title: 'Tom, Dick and Harry 3', meta: 'Upcoming · In development', href: 'upcoming/', img: 'assets/films/tom-dick-and-harry-2-w800.jpg' },
-    { title: 'Misfired — Bali 9', meta: 'Upcoming · In development', href: 'upcoming/', img: 'assets/films/fareb-w800.jpg' },
-    { title: 'Untitled Hollywood Feature', meta: 'Upcoming · Pre-production', href: 'upcoming/', img: 'assets/films/do-lafzon-ki-kahani-w800.jpg' },
-    { title: 'Deepak Tijori', meta: 'Managing Director', href: 'people/deepak-tijori/', img: 'assets/people/deepak-tijori-w800.jpg' },
+    // Upcoming
+    { title: 'Kabuliwala', meta: 'Upcoming international · Atiq Rahimi', href: 'upcoming/', img: 'assets/films/kabuliwala-poster-w800.jpg' },
+    { title: 'Misfired', meta: 'Upcoming international · Pre-production', href: 'upcoming/', img: 'assets/films/misfired-bali-9-w800.svg' },
+    { title: 'Defiant Nadia', meta: 'Upcoming national · In development', href: 'upcoming/', img: 'assets/films/defiant-nadia-w800.svg' },
+    { title: 'Tom, Dick & Mary', meta: 'Upcoming national · Deepak Tijori', href: 'upcoming/', img: 'assets/films/tom-dick-and-mary-w800.svg' },
+    { title: 'Khoj', meta: 'Upcoming national · In development', href: 'upcoming/', img: 'assets/films/khoj-w800.svg' },
+    // People
+    { title: 'Deepak Tijori', meta: 'Founder · Dadasaheb Phalke 2024', href: 'people/deepak-tijori/', img: 'assets/people/deepak-tijori-2026-formal-w1200.jpg' },
     { title: 'Snehal Kulshreshtha', meta: 'Director · PR & Global Outreach', href: 'people/snehal-kulshreshtha/', img: 'assets/people/snehal-kulshreshtha-w800.jpg' },
     { title: 'Anita Sharma', meta: 'Co-Producer · Music Director', href: 'people/anita-sharma/', img: 'assets/people/anita-sharma-w800.jpg' },
     { title: 'Mandeep Kaur Tijori', meta: 'Director · Producer · Actor', href: 'people/mandeep-kaur-tijori/', img: 'assets/people/mandeep-kaur-tijori-w800.jpg' },
@@ -50,6 +55,7 @@
     if (!slidesWrap) return;
     const slides = Array.from(slidesWrap.querySelectorAll('.hero__slide'));
     const titles = Array.from(document.querySelectorAll('.hero__copy[data-slide]'));
+    const quoteChips = Array.from(document.querySelectorAll('.hero__quote-chip[data-slide-quote]'));
     const dotsWrap = document.querySelector('.hero__dots');
     const counter = document.querySelector('.hero__counter');
     if (!slides.length) return;
@@ -66,6 +72,18 @@
       idx = (n + slides.length) % slides.length;
       slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
       titles.forEach((t, i) => { t.style.display = i === idx ? '' : 'none'; });
+      // Quote chips: only some slides have one — hide all, then show the one matching this slide (if exists)
+      if (quoteChips.length) {
+        quoteChips.forEach(c => { c.style.display = 'none'; });
+        const match = quoteChips.find(c => parseInt(c.getAttribute('data-slide-quote'), 10) === idx);
+        if (match) {
+          // Force a reflow so animation restarts
+          match.style.display = '';
+          void match.offsetWidth;
+          match.style.animation = 'none';
+          requestAnimationFrame(() => { match.style.animation = ''; });
+        }
+      }
       if (dotsWrap) dotsWrap.querySelectorAll('button').forEach((d, i) => d.classList.toggle('is-active', i === idx));
       paintCounter();
     }

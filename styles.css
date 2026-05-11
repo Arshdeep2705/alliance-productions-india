@@ -1692,6 +1692,229 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   color: var(--saffron);
 }
 
+/* ─── Indian flag wave band (header bottom + footer top) ─ */
+
+.flag-band {
+  width: 100%;
+  height: 10px;
+  background: url('assets/brand/flag-wave-w1600.png') center / cover no-repeat;
+  background-color: var(--white);
+  opacity: 0.92;
+}
+.flag-band--lg { height: 26px; }
+.flag-band--in-header {
+  /* sits flush under the header */
+  margin-top: -1px;
+  position: relative;
+  z-index: 9;
+}
+
+/* path-fixups for prefix scoped pages */
+.flag-band--p1 { background-image: url('../assets/brand/flag-wave-w1600.png'); }
+.flag-band--p2 { background-image: url('../../assets/brand/flag-wave-w1600.png'); }
+
+/* ─── Hero slide CRITIC quote chip (corner overlay) ───── */
+
+.hero__quote-chip {
+  position: absolute;
+  top: clamp(110px, 12vw, 160px);
+  right: clamp(20px, 4vw, 56px);
+  max-width: 320px;
+  z-index: 3;
+  padding: 18px 22px;
+  background: rgba(0,0,0,.42);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255,255,255,.18);
+  border-left: 3px solid var(--saffron);
+  color: var(--white);
+  border-radius: 4px;
+  animation: revealQuote .9s var(--ease-out-quart) .6s both;
+}
+@media (max-width: 760px) {
+  .hero__quote-chip {
+    top: auto;
+    bottom: clamp(160px, 22vw, 220px);
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: calc(100% - 32px);
+  }
+}
+.hero__quote-chip__stars {
+  display: flex;
+  gap: 2px;
+  color: var(--saffron);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.hero__quote-chip__text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0 0 10px;
+  color: var(--white);
+  font-weight: 500;
+}
+.hero__quote-chip__cite {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.78);
+  font-style: normal;
+}
+@keyframes revealQuote {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__quote-chip { animation: none; }
+}
+
+/* ─── Critic quotes band (above synopsis on film pages) ─ */
+
+.critic-quotes {
+  padding: clamp(48px, 7vw, 80px) 0;
+  background: var(--off-white);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.critic-quotes__head {
+  text-align: center;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+.critic-quotes__head .eyebrow { color: var(--saffron); margin-bottom: 10px; }
+.critic-quotes__head h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+.critic-quotes__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3vw, 32px);
+}
+.critic-quote-card {
+  padding: 28px 26px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--saffron);
+  display: flex;
+  flex-direction: column;
+}
+.critic-quote-card__stars {
+  display: flex;
+  gap: 2px;
+  font-size: 16px;
+  color: var(--saffron);
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+.critic-quote-card__text {
+  font-family: var(--font-display);
+  font-size: 19px;
+  line-height: 1.45;
+  font-style: italic;
+  color: var(--ink);
+  margin: 0 0 18px;
+  flex-grow: 1;
+}
+.critic-quote-card__cite {
+  display: block;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.critic-quote-card__outlet { display: block; font-size: 11px; color: var(--muted); margin-top: 4px; font-weight: 400; }
+
+.critic-quotes-placeholder {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 32px;
+  border: 1px dashed var(--line-strong);
+  background: var(--white);
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Upcoming: two-section structure ──────────────────── */
+
+.upcoming-section + .upcoming-section { margin-top: clamp(56px, 8vw, 96px); }
+.upcoming-section__head {
+  margin-bottom: clamp(28px, 4vw, 44px);
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.upcoming-section__head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.6vw, 44px);
+  margin: 0;
+  font-weight: 500;
+}
+.upcoming-section__count {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Echoes of Us — feature poster + cast block ───── */
+
+.eou-feature {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+  padding: clamp(56px, 8vw, 100px) 0;
+}
+@media (max-width: 860px) { .eou-feature { grid-template-columns: 1fr; } }
+.eou-feature__poster {
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0,0,0,.18);
+  overflow: hidden;
+}
+.eou-feature__poster img { width: 100%; height: auto; display: block; }
+.eou-feature__copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 58px);
+  margin: 0 0 18px;
+}
+.eou-feature__copy p { font-size: 17px; line-height: 1.75; color: var(--ink-soft); }
+.eou-feature__laurel-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border: 1px solid var(--saffron);
+  background: rgba(242,155,25,.08);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+.eou-feature__laurel-count strong { color: var(--saffron); font-size: 15px; }
+
 /* ─── Festival laurels strip (Echoes of Us — 8 wins) ── */
 
 .laurels {
