@@ -1743,14 +1743,8 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   animation: revealQuote .9s var(--ease-out-quart) .6s both;
 }
 @media (max-width: 760px) {
-  .hero__quote-chip {
-    top: auto;
-    bottom: clamp(160px, 22vw, 220px);
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: calc(100% - 32px);
-  }
+  /* Hide quote chips entirely on mobile — they overlap the hero copy and obscure the poster. */
+  .hero__quote-chip { display: none !important; }
 }
 .hero__quote-chip__stars {
   display: flex;
@@ -2059,6 +2053,42 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   margin-bottom: 22px;
 }
 .eou-feature__laurel-count strong { color: var(--saffron); font-size: 15px; }
+
+/* ─── EOU featured block — big awards header (3 lines, between eyebrow and title) ─── */
+.eou-feature__awards {
+  list-style: none;
+  margin: 12px 0 24px;
+  padding: 20px 24px;
+  border-left: 3px solid var(--saffron);
+  background: linear-gradient(90deg, rgba(242,155,25,.12) 0%, rgba(242,155,25,.02) 100%);
+  display: grid;
+  gap: 8px;
+}
+.eou-feature__awards li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.eou-feature__awards li strong {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 3.6vw, 44px);
+  font-weight: 600;
+  color: var(--saffron);
+  line-height: 1;
+  min-width: 1.4em;
+}
+.eou-feature__awards li span {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+@media (max-width: 640px) {
+  .eou-feature__awards { padding: 16px 18px; }
+}
 
 /* ─── Festival laurels strip (Echoes of Us — 8 wins) ── */
 
