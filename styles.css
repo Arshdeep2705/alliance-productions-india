@@ -1913,11 +1913,12 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 }
 .recognition-strip__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: clamp(18px, 2.4vw, 28px);
-  max-width: 980px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(20px, 2.6vw, 32px);
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 clamp(16px, 3vw, 32px);
+  align-items: start;
 }
 .recognition-card {
   display: block;
@@ -1928,14 +1929,12 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   position: relative;
   overflow: hidden;
   border: 1px solid var(--line);
-  background: var(--ink);
-  aspect-ratio: 4 / 5;
+  background: transparent;
 }
 .recognition-card__poster img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   transition: transform 600ms var(--ease-out-quart);
 }
 .recognition-card:hover .recognition-card__poster img { transform: scale(1.025); }
