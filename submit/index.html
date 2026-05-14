@@ -6,7 +6,7 @@
   <title>Submit a project — Alliance Productions India LLP</title>
   <meta name="description" content="Submit a feature, short or series project to Alliance Productions India LLP." />
   <link rel="icon" href="../assets/logo/api-emblem-w200.png" />
-  <link rel="stylesheet" href="../styles.css?v=1778540907001" />
+  <link rel="stylesheet" href="../styles.css?v=1778758971498" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -50,8 +50,17 @@
   <section class="section section--alt">
     <div class="container">
       <form class="pitch-form reveal" novalidate
-            data-recipient="deepaktijori.api@gmail.com"
-            data-subject="Project submission — Alliance Productions India">
+            action="https://formsubmit.co/deepaktijori.api@gmail.com"
+            method="POST">
+        <!-- Formsubmit configuration -->
+        <input type="hidden" name="_cc" value="ash.alliancemediaptyltd@gmail.com,anita.h.sharma@gmail.com" />
+        <input type="hidden" name="_subject" value="Project submission — Alliance Productions India" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://allianceproductionsindia.com/thank-you/" />
+        <!-- honeypot (must stay empty; bots fill it) -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
         <div class="form-row">
           <label for="title" class="is-required"><span>Project title</span></label>
           <input type="text" id="title" name="title" required placeholder="Working title" autocomplete="off" />
@@ -122,6 +131,6 @@
     </div>
   </div>
 
-  <script src="../script.js?v=1778540907001"></script>
+  <script src="../script.js?v=1778758971498"></script>
 </body>
 </html>

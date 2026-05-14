@@ -31,7 +31,7 @@
     { title: 'Tipppsy', meta: 'Film · Director · ★★★★ Bhavikk Sangghvi', href: 'films/tipppsy/', img: 'assets/films/tipppsy-w800.jpg' },
     { title: 'Do Lafzon Ki Kahani', meta: 'Film · Director, Producer · Randeep Hooda', href: 'films/do-lafzon-ki-kahani/', img: 'assets/films/do-lafzon-ki-kahani-w800.jpg' },
     { title: 'Fox', meta: 'Film · Director, Producer', href: 'films/fox/', img: 'assets/films/fox-w800.jpg' },
-    { title: 'Tom, Dick, and Harry', meta: 'Film · Director', href: 'films/tom-dick-and-harry/', img: 'assets/films/tom-dick-and-harry-w800.jpg' },
+    { title: 'Tom, Dick, and Marry', meta: 'Film · Director', href: 'films/tom-dick-and-harry/', img: 'assets/films/tom-dick-and-harry-w800.jpg' },
     { title: 'Fareb', meta: 'Film · Director', href: 'films/fareb/', img: 'assets/films/fareb-w800.jpg' },
     { title: 'Khamoshh… Khauff Ki Raat', meta: 'Film · Director, Producer', href: 'films/khamoshh-khauff-ki-raat/', img: 'assets/films/khamoshh-w800.jpg' },
     { title: 'Oops!', meta: 'Film · Director, Producer', href: 'films/oops/', img: 'assets/films/oops-w800.jpg' },
@@ -39,13 +39,15 @@
     { title: 'Kabuliwala', meta: 'Upcoming international · Atiq Rahimi', href: 'upcoming/', img: 'assets/films/kabuliwala-poster-w800.jpg' },
     { title: 'Misfired', meta: 'Upcoming international · Pre-production', href: 'upcoming/', img: 'assets/films/misfired-bali-9-w800.svg' },
     { title: 'Defiant Nadia', meta: 'Upcoming international · In development', href: 'upcoming/', img: 'assets/films/defiant-nadia-w800.svg' },
-    { title: 'Tom, Dick & Harry 3', meta: 'Upcoming national · Deepak Tijori', href: 'upcoming/', img: 'assets/films/tom-dick-and-harry-3-w800.svg' },
+    { title: 'Tom, Dick & Marry 3', meta: 'Upcoming national · Deepak Tijori', href: 'upcoming/', img: 'assets/films/tom-dick-and-harry-3-w800.svg' },
     { title: 'Khoj', meta: 'Upcoming national · In development', href: 'upcoming/', img: 'assets/films/khoj-w800.svg' },
     // People
     { title: 'Deepak Tijori', meta: 'Founder · Dadasaheb Phalke 2024', href: 'people/deepak-tijori/', img: 'assets/people/deepak-tijori-2026-formal-w1200.jpg' },
+    { title: 'Mandeep Kaur Tijori', meta: 'Director · Producer · Actor', href: 'people/mandeep-kaur-tijori/', img: 'assets/people/mandeep-kaur-tijori-w800.jpg' },
+    { title: 'Arshdeep Singh', meta: 'Managing Director · Alliance Media Pty Ltd · Melbourne', href: 'people/arshdeep-singh/', img: 'assets/people/arshdeep-singh-w800.jpg' },
     { title: 'Snehal Kulshreshtha', meta: 'Director · PR & Global Outreach', href: 'people/snehal-kulshreshtha/', img: 'assets/people/snehal-kulshreshtha-w800.jpg' },
     { title: 'Anita Sharma', meta: 'Co-Producer · Music Director', href: 'people/anita-sharma/', img: 'assets/people/anita-sharma-w800.jpg' },
-    { title: 'Mandeep Kaur Tijori', meta: 'Director · Producer · Actor', href: 'people/mandeep-kaur-tijori/', img: 'assets/people/mandeep-kaur-tijori-w800.jpg' },
+    { title: 'Ramesh Sharma', meta: 'Co-Producer · Echoes of Us', href: 'people/ramesh-sharma/', img: 'assets/people/ramesh-sharma-w800.jpg' },
   ];
 
   /* ─── Hero rotator ─────────────────────────────────── */
@@ -163,36 +165,38 @@
       });
 
       form.addEventListener('submit', function (e) {
-        e.preventDefault();
+        // Client-side validation only — if all fields valid, let the form post natively to Formsubmit.
         let firstInvalid = null;
         form.querySelectorAll('input, select, textarea').forEach(field => {
+          // Skip Formsubmit's hidden control fields (names prefixed with _)
+          if (field.name && field.name.charAt(0) === '_') return;
           if (!validateField(field) && !firstInvalid) firstInvalid = field;
         });
 
         if (firstInvalid) {
+          e.preventDefault();
           status.className = 'form-status is-error';
           status.textContent = 'Please correct the highlighted fields and try again.';
           firstInvalid.focus();
           return;
         }
 
-        // Build mailto from collected values (no backend on a static site)
-        const data = {};
-        form.querySelectorAll('input, select, textarea').forEach(f => {
-          if (f.name) data[f.name] = f.value;
-        });
-        const recipient = form.dataset.recipient || 'info@allianceproductionsindia.com';
-        const subject = encodeURIComponent(form.dataset.subject || 'Enquiry — Alliance Productions India');
-        const body = encodeURIComponent(
-          Object.keys(data).map(k => k.replace(/_/g, ' ').toUpperCase() + ':\n' + data[k]).join('\n\n')
-        );
+        // Honeypot anti-bot guard (Formsubmit also enforces server-side)
+        const honey = form.querySelector('input[name="_honey"]');
+        if (honey && honey.value) {
+          e.preventDefault();
+          status.className = 'form-status is-error';
+          status.textContent = 'Submission blocked.';
+          return;
+        }
 
-        // Show success and open user's mail client
+        // Show in-flight message; the browser will redirect to Formsubmit's thank-you page.
         status.className = 'form-status is-success';
-        status.textContent = 'Thank you. Your default mail client will open in a moment with your details pre-filled.';
-        setTimeout(() => {
-          window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
-        }, 700);
+        status.textContent = 'Sending your message — please wait…';
+        // Disable the submit button to prevent double-posting
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+        // Native submit proceeds.
       });
     });
   }
