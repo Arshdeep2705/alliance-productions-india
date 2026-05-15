@@ -1,0 +1,8 @@
+# Alliance Productions India LLP
+# https://allianceproductionsindia.com/
+
+User-agent: *
+Allow: /
+Disallow: /thank-you/
+
+Sitemap: https://allianceproductionsindia.com/sitemap.xml
