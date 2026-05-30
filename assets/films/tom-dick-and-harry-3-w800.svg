@@ -19,11 +19,10 @@
   <!-- Title -->
   <text x="400" y="630" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-weight="500" font-size="64" fill="#f5e6c8">Tom, Dick</text>
   <text x="400" y="700" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-weight="500" font-size="64" fill="#f5e6c8">&amp; Marry</text>
-  <text x="400" y="772" text-anchor="middle" font-family="'Arial Black',sans-serif" font-weight="900" font-size="56" fill="#f29b19" letter-spacing="-2">3</text>
   <!-- Divider -->
-  <line x1="320" y1="820" x2="480" y2="820" stroke="#f29b19" stroke-width="2"/>
+  <line x1="320" y1="760" x2="480" y2="760" stroke="#f29b19" stroke-width="2"/>
   <!-- Sub -->
-  <text x="400" y="870" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" letter-spacing="6" fill="#dcc8a4">A COMEDY · IN DEVELOPMENT</text>
+  <text x="400" y="815" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" letter-spacing="6" fill="#dcc8a4">A COMEDY · IN DEVELOPMENT</text>
   <!-- Director -->
   <text x="400" y="1060" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" letter-spacing="4" fill="#a89770">A FILM BY DEEPAK TIJORI</text>
   <text x="400" y="1100" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" letter-spacing="6" fill="#867253">ALLIANCE PRODUCTIONS INDIA LLP</text>

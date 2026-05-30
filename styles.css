@@ -331,6 +331,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .hero__slide {
   position: absolute;
   inset: -8%;            /* extra so blur edges don't show */
+  background-image: var(--hero-bg-lg);
   background-size: cover;
   background-position: center 35%;
   opacity: 0;
@@ -338,6 +339,9 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   filter: blur(14px) saturate(1.05) contrast(1.05);
   transform: scale(1.08);
   will-change: opacity, transform;
+}
+@media (max-width: 768px) {
+  .hero__slide { background-image: var(--hero-bg-sm, var(--hero-bg-lg)); }
 }
 .hero__slide::before {
   content: '';
@@ -375,7 +379,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   background: rgba(0,0,0,.28);
   backdrop-filter: blur(6px);
 }
-.hero h1 {
+.hero h1, .hero__copy h2.hero__title {
   color: var(--white);
   font-family: var(--font-display);
   font-size: clamp(48px, 7.2vw, 104px);
@@ -1553,7 +1557,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 @media (max-width: 560px) {
   .header-utils .icon-btn[data-search] { width: 36px; height: 36px; }
   .brand img { height: 50px; }
-  .hero h1 { font-size: 44px; }
+  .hero h1, .hero__copy h2.hero__title { font-size: 44px; }
 }
 
 /* ─── Utility ─────────────────────────────────────────── */
@@ -1907,9 +1911,10 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 }
 .recognition-strip__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: clamp(20px, 2.6vw, 32px);
-  max-width: 1180px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 300px));
+  justify-content: center;
+  gap: clamp(20px, 2.6vw, 36px);
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 clamp(16px, 3vw, 32px);
   align-items: start;
@@ -2220,8 +2225,17 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 /* ─── Premium-feel polish ─────────────────────────────── */
 
 /* Headlines wrap nicely without orphans */
-.hero h1, .person-hero h1, .movie-banner__title, .page-banner h1 {
+.hero h1, .hero__copy h2.hero__title, .person-hero h1, .movie-banner__title, .page-banner h1 {
   text-wrap: balance;
+}
+
+/* Studio section H1 — sized to match a section H2 visually (semantic H1 promotion) */
+.studio-h1 {
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 500;
+  letter-spacing: normal;
+  margin: 0 0 1em;
+  line-height: 1.15;
 }
 
 /* iOS won't auto-zoom inputs at 16px+ */
