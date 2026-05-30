@@ -31,7 +31,7 @@
     { title: 'Tipppsy', meta: 'Film · Director · ★★★★ Bhavikk Sangghvi', href: 'films/tipppsy/', img: 'assets/films/tipppsy-w800.jpg' },
     { title: 'Do Lafzon Ki Kahani', meta: 'Film · Director, Producer · Randeep Hooda', href: 'films/do-lafzon-ki-kahani/', img: 'assets/films/do-lafzon-ki-kahani-w800.jpg' },
     { title: 'Fox', meta: 'Film · Director, Producer', href: 'films/fox/', img: 'assets/films/fox-w800.jpg' },
-    { title: 'Tom, Dick, and Marry', meta: 'Film · Director', href: 'films/tom-dick-and-harry/', img: 'assets/films/tom-dick-and-harry-w800.jpg' },
+    { title: 'Tom, Dick, and Harry', meta: 'Film · Director', href: 'films/tom-dick-and-harry/', img: 'assets/films/tom-dick-and-harry-w800.jpg' },
     { title: 'Fareb', meta: 'Film · Director', href: 'films/fareb/', img: 'assets/films/fareb-w800.jpg' },
     { title: 'Khamoshh… Khauff Ki Raat', meta: 'Film · Director, Producer', href: 'films/khamoshh-khauff-ki-raat/', img: 'assets/films/khamoshh-w800.jpg' },
     { title: 'Oops!', meta: 'Film · Director, Producer', href: 'films/oops/', img: 'assets/films/oops-w800.jpg' },
@@ -39,7 +39,7 @@
     { title: 'Kabuliwala', meta: 'Upcoming international · Atiq Rahimi', href: 'upcoming/', img: 'assets/films/kabuliwala-poster-w800.jpg' },
     { title: 'Misfired', meta: 'Upcoming international · Pre-production', href: 'upcoming/', img: 'assets/films/misfired-bali-9-w800.svg' },
     { title: 'Defiant Nadia', meta: 'Upcoming international · In development', href: 'upcoming/', img: 'assets/films/defiant-nadia-w800.svg' },
-    { title: 'Tom, Dick & Marry', meta: 'Upcoming national · Deepak Tijori', href: 'upcoming/', img: 'assets/films/tom-dick-and-harry-3-w800.svg' },
+    { title: 'Tom, Dick & Mary', meta: 'Upcoming national · Deepak Tijori', href: 'upcoming/', img: 'assets/films/tom-dick-and-harry-3-w800.svg' },
     { title: 'Khoj', meta: 'Upcoming national · In development', href: 'upcoming/', img: 'assets/films/khoj-w800.svg' },
     // People
     { title: 'Deepak Tijori', meta: 'Founder · Dadasaheb Phalke 2024', href: 'people/deepak-tijori/', img: 'assets/people/deepak-tijori-2026-formal-w1200.jpg' },

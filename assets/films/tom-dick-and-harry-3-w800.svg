@@ -18,7 +18,7 @@
   </g>
   <!-- Title -->
   <text x="400" y="630" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-weight="500" font-size="64" fill="#f5e6c8">Tom, Dick</text>
-  <text x="400" y="700" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-weight="500" font-size="64" fill="#f5e6c8">&amp; Marry</text>
+  <text x="400" y="700" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-weight="500" font-size="64" fill="#f5e6c8">&amp; Mary</text>
   <!-- Divider -->
   <line x1="320" y1="760" x2="480" y2="760" stroke="#f29b19" stroke-width="2"/>
   <!-- Sub -->
