@@ -47,7 +47,7 @@
     { title: 'Arshdeep Singh', meta: 'Executive Director · Alliance Media Pty Ltd · Melbourne', href: 'people/arshdeep-singh/', img: 'assets/people/arshdeep-singh-w800.jpg' },
     { title: 'Snehal Kulshreshtha', meta: 'Director · PR & Global Outreach', href: 'people/snehal-kulshreshtha/', img: 'assets/people/snehal-kulshreshtha-w800.jpg' },
     { title: 'Anita Sharma', meta: 'Co-Producer · Music Director', href: 'people/anita-sharma/', img: 'assets/people/anita-sharma-w800.jpg' },
-    { title: 'Ramesh Sharma', meta: 'Co-Producer · Echoes of Us', href: 'people/ramesh-sharma/', img: 'assets/people/ramesh-sharma-w800.jpg' },
+    { title: 'Ramesh Sharma', meta: 'Co-Producer · Dulhaniya Le Aaeegi', href: 'people/ramesh-sharma/', img: 'assets/people/ramesh-sharma-w800.jpg' },
   ];
 
   /* ─── Hero rotator ─────────────────────────────────── */
