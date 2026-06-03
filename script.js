@@ -39,7 +39,7 @@
     { title: 'Kabuliwala', meta: 'Upcoming international · Atiq Rahimi', href: 'upcoming/', img: 'assets/films/kabuliwala-poster-w800.jpg' },
     { title: 'Misfired', meta: 'Upcoming international · Pre-production', href: 'upcoming/', img: 'assets/films/misfired-bali-9-w800.svg' },
     { title: 'Defiant Nadia', meta: 'Upcoming international · In development', href: 'upcoming/defiant-nadia/', img: 'assets/films/defiant-nadia-w800.jpg' },
-    { title: 'Tom, Dick & Mary', meta: 'Upcoming national · Deepak Tijori', href: 'upcoming/', img: 'assets/films/tom-dick-and-harry-3-w800.svg' },
+    { title: 'Tom, Dick & Mary', meta: 'Upcoming national · Deepak Tijori', href: 'upcoming/', img: 'assets/films/tom-dick-and-mary-w800.svg' },
     { title: 'Khoj', meta: 'Upcoming national · In development', href: 'upcoming/', img: 'assets/films/khoj-w800.svg' },
     // People
     { title: 'Deepak Tijori', meta: 'Founder · Dadasaheb Phalke 2024', href: 'people/deepak-tijori/', img: 'assets/people/deepak-tijori-2026-formal-w1200.jpg' },
