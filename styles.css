@@ -1523,7 +1523,18 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 
   .header-utils .social-row { display: none; }
   .header-utils .contact-btn { display: none; }
-  .site-header__inner { grid-template-columns: auto 1fr auto auto; }
+  /* Mobile header: logo LEFT, search + menu pinned to the RIGHT.
+     (The desktop grid mis-centered the utils on mobile because the fixed .main-nav
+     is out of flow, leaving header-utils stranded in the 1fr column. Flex + space-between
+     guarantees the controls sit hard right where users reach for them.) */
+  .site-header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .header-utils { gap: 8px; margin-left: auto; }
+  .brand img { height: 46px; }
 }
 
 @keyframes mobileNavIn {
