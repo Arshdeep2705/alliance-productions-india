@@ -367,6 +367,178 @@
   const prefersReducedMotion = window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ─── Scroll progress bar + auto-hiding header ─────── */
+  function initScrollFX() {
+    const bar = document.createElement('div');
+    bar.className = 'scroll-progress';
+    document.body.appendChild(bar);
+    const header = document.querySelector('.site-header');
+    const nav = document.querySelector('.main-nav');
+    let lastY = window.scrollY;
+    let ticking = false;
+
+    function paint() {
+      ticking = false;
+      const y = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+      if (header) {
+        header.classList.toggle('is-scrolled', y > 8);
+        const menuOpen = nav && nav.classList.contains('is-open');
+        if (menuOpen || y < 160) {
+          header.classList.remove('is-hidden');
+        } else if (y > lastY + 6) {
+          header.classList.add('is-hidden');
+        } else if (y < lastY - 6) {
+          header.classList.remove('is-hidden');
+        }
+      }
+      lastY = y;
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(paint); }
+    }, { passive: true });
+    paint();
+  }
+
+  /* ─── Animated stat counters (count up on reveal) ──── */
+  function initCounters() {
+    const nums = document.querySelectorAll('.stat__num');
+    if (!nums.length || prefersReducedMotion || !('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        io.unobserve(entry.target);
+        const el = entry.target;
+        const m = el.textContent.trim().match(/^(\d+)(.*)$/);
+        if (!m) return;
+        const target = parseInt(m[1], 10);
+        const suffix = m[2] || '';
+        const t0 = performance.now();
+        const dur = 1400;
+        function tick(now) {
+          const p = Math.min(1, (now - t0) / dur);
+          const eased = 1 - Math.pow(1 - p, 4);
+          el.textContent = Math.round(target * eased) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.5 });
+    nums.forEach(el => io.observe(el));
+  }
+
+  /* ─── Staggered grid reveals (cards cascade in) ────── */
+  function initStagger() {
+    const grids = document.querySelectorAll(
+      '.films-grid, .people-grid, .press-grid, .stats-row, .laurels__grid, ' +
+      '.recognition-strip__grid, .critic-quotes__grid, .media-grid'
+    );
+    grids.forEach(grid => {
+      Array.from(grid.children).forEach((child, i) => {
+        child.classList.add('reveal-child');
+        child.style.setProperty('--ri', Math.min(i, 9));
+      });
+      if (grid.classList.contains('reveal')) {
+        grid.classList.add('has-stagger');
+      } else if (!grid.closest('.reveal')) {
+        grid.classList.add('reveal', 'has-stagger');
+      }
+    });
+  }
+
+  /* ─── 3D tilt on posters/portraits (fine pointers) ─── */
+  function initTilt() {
+    if (prefersReducedMotion) return;
+    if (!window.matchMedia || !window.matchMedia('(pointer: fine)').matches) return;
+    document.querySelectorAll('.film-card, .person-card, .recognition-card').forEach(card => {
+      const target = card.querySelector('.film-card__poster, .person-card__portrait, .recognition-card__poster');
+      if (!target) return;
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const rx = ((e.clientY - r.top) / r.height - 0.5) * -5;
+        const ry = ((e.clientX - r.left) / r.width - 0.5) * 5;
+        target.style.transform = 'perspective(900px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
+      });
+      card.addEventListener('mouseleave', () => { target.style.transform = ''; });
+    });
+  }
+
+  /* ─── Magnetic pull on primary buttons ─────────────── */
+  function initMagnetic() {
+    if (prefersReducedMotion) return;
+    if (!window.matchMedia || !window.matchMedia('(pointer: fine)').matches) return;
+    document.querySelectorAll('.btn, .contact-btn').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const dx = (e.clientX - r.left - r.width / 2) / (r.width / 2);
+        const dy = (e.clientY - r.top - r.height / 2) / (r.height / 2);
+        btn.style.transform = 'translate(' + (dx * 3).toFixed(1) + 'px,' + (dy * 3).toFixed(1) + 'px)';
+      });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    });
+  }
+
+  /* ─── Hero parallax + fade on scroll ───────────────── */
+  function initHeroParallax() {
+    if (prefersReducedMotion) return;
+    const content = document.querySelector('.hero__content');
+    const hero = document.querySelector('.hero');
+    if (!content || !hero) return;
+    let ticking = false;
+    function paint() {
+      ticking = false;
+      const y = window.scrollY;
+      const h = hero.offsetHeight || 1;
+      if (y > h) return;
+      content.style.transform = 'translateY(' + (y * 0.22).toFixed(1) + 'px)';
+      content.style.opacity = Math.max(0, 1 - y / (h * 0.85)).toFixed(3);
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(paint); }
+    }, { passive: true });
+  }
+
+  /* ─── Award marquee: duplicate track for seamless loop ─ */
+  function initMarquee() {
+    document.querySelectorAll('.award-marquee__track').forEach(track => {
+      track.innerHTML += track.innerHTML;   // two copies → -50% loop point
+      const px = track.scrollWidth / 2;
+      track.style.setProperty('--marquee-dur', Math.max(28, Math.round(px / 55)) + 's');
+    });
+  }
+
+  /* ─── Back-to-top button ───────────────────────────── */
+  function initBackToTop() {
+    const btn = document.createElement('button');
+    btn.className = 'to-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>';
+    document.body.appendChild(btn);
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' }));
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        btn.classList.toggle('is-shown', window.scrollY > 700);
+      });
+    }, { passive: true });
+  }
+
+  /* ─── Blur-up fade-in for lazy images ──────────────── */
+  function initImgFade() {
+    if (prefersReducedMotion) return;
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      if (img.complete) return;
+      img.classList.add('img-fade');
+      const done = () => img.classList.add('is-loaded');
+      img.addEventListener('load', done, { once: true });
+      img.addEventListener('error', done, { once: true });
+    });
+  }
+
   /* ─── Image fallback for any broken poster/portrait ── */
   function initImageFallbacks() {
     document.querySelectorAll('img').forEach(img => {
@@ -383,9 +555,18 @@
     initSearch();
     initTrailerModal();
     initMobileNav();
+    initStagger();      // must run before initReveal (tags grids + children)
     initReveal();
     initActiveNav();
     initForms();
+    initImgFade();
     initImageFallbacks();
+    initScrollFX();
+    initCounters();
+    initTilt();
+    initMagnetic();
+    initHeroParallax();
+    initMarquee();
+    initBackToTop();
   });
 })();
