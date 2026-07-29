@@ -28,7 +28,7 @@
   /* ─── Search index ─────────────────────────────────── */
   const SEARCH_INDEX = [
     { title: 'Echoes of Us', meta: 'Festival short · 88+ international laurels', href: 'films/echoes-of-us/', img: 'assets/films/echoes-of-us-poster-w800.jpg' },
-    { title: 'Get Set Go', meta: 'Gujarati action-thriller · 7 August 2026 · Deepak Tijori', href: 'films/get-set-go/', img: 'assets/films/get-set-go-w800.jpg' },
+    { title: 'Get Set Go', meta: 'Gujarati action-thriller · 7 August 2026 · Deepak Tijori', href: 'films/get-set-go/', img: 'assets/films/get-set-go-poster-w800.jpg' },
     { title: 'Tipppsy', meta: 'Film · Director · ★★★★ Bhavikk Sangghvi', href: 'films/tipppsy/', img: 'assets/films/tipppsy-w800.jpg' },
     { title: 'Do Lafzon Ki Kahani', meta: 'Film · Director, Producer · Randeep Hooda', href: 'films/do-lafzon-ki-kahani/', img: 'assets/films/do-lafzon-ki-kahani-w800.jpg' },
     { title: 'Fox', meta: 'Film · Director, Producer', href: 'films/fox/', img: 'assets/films/fox-w800.jpg' },

@@ -2704,3 +2704,7 @@ img.is-missing::after {
     transform: none !important;
   }
 }
+
+/* Get Set Go — banner without a still (director preference) */
+.movie-banner--plain { background: linear-gradient(160deg, #14100c 0%, #0a0a0a 60%, #16120b 100%); }
+.movie-banner--plain .movie-banner__overlay { background: none; }
