@@ -1,0 +1,9 @@
+# Internal research / working material — must NEVER be published.
+# GitHub Pages serves every tracked file at the live domain, so anything
+# in here would be readable by anyone at allianceproductionsindia.com/<path>.
+# Working copies live in the PARENT folder: ../_internal-data/
+data/
+_internal-data/
+*.log
+.DS_Store
+Thumbs.db
