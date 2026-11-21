@@ -329,17 +329,35 @@
 
   /* ─── Scroll reveal ────────────────────────────────── */
   function initReveal() {
-    const els = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window) || !els.length) {
-      els.forEach(el => el.classList.add('is-visible'));
-      return;
+    // Position check instead of IntersectionObserver: a ratio threshold can
+    // never be met by a block taller than the viewport (the one-column films
+    // grid on phones), and IO never fires for a section skipped in one fast
+    // flick. Anything whose top has entered the viewport — or is already
+    // above it — is revealed, so no block can stay invisible.
+    const els = Array.from(document.querySelectorAll('.reveal'));
+    if (!els.length) return;
+    let pending = false;
+    function check() {
+      pending = false;
+      const limit = window.innerHeight * 0.92;
+      for (let i = els.length - 1; i >= 0; i--) {
+        if (els[i].getBoundingClientRect().top < limit) {
+          els[i].classList.add('is-visible');
+          els.splice(i, 1);
+        }
+      }
+      if (!els.length) {
+        window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', onScroll);
+      }
     }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    els.forEach(el => io.observe(el));
+    function onScroll() {
+      if (!pending) { pending = true; requestAnimationFrame(check); }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    window.addEventListener('load', onScroll);
+    check();
   }
 
   /* ─── Auto-set active nav ──────────────────────────── */
